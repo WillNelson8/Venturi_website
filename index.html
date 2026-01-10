@@ -43,9 +43,69 @@
                     <p class="hero-note">Available for iPad • iOS 17.0 or later</p>
                 </div>
                 <div class="hero-image">
-                    <div class="ipad-mockup">
-                        <div class="ipad-screen"></div>
-                    </div>
+                    <svg class="ipad-mockup" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                        <!-- iPad Frame (Landscape) -->
+                        <rect x="40" y="60" width="720" height="480" rx="32" fill="#1A2332" stroke="#2D3B54" stroke-width="3"/>
+
+                        <!-- Screen -->
+                        <rect x="60" y="80" width="680" height="440" rx="20" fill="#F5F7FA"/>
+
+                        <!-- Sidebar -->
+                        <rect x="60" y="80" width="200" height="440" rx="20" fill="#1A2332"/>
+                        <text x="80" y="120" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="white">Venturi</text>
+
+                        <!-- Nav Items -->
+                        <rect x="70" y="150" width="180" height="40" rx="8" fill="#0066CC"/>
+                        <text x="85" y="176" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="white">Dashboard</text>
+
+                        <text x="85" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#9CA3AF">Logbook</text>
+                        <text x="85" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#9CA3AF">Maintenance</text>
+                        <text x="85" y="300" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#9CA3AF">Analytics</text>
+
+                        <!-- Main Content Area -->
+                        <text x="290" y="120" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#1A2332">Dashboard</text>
+
+                        <!-- Aircraft Card -->
+                        <rect x="290" y="150" width="420" height="110" rx="16" fill="white" filter="url(#shadow)"/>
+                        <text x="310" y="182" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#1A2332">N3897Y</text>
+                        <text x="310" y="208" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#6B7280">Cessna 172S Skyhawk</text>
+                        <rect x="310" y="220" width="100" height="30" rx="8" fill="#EFF6FF"/>
+                        <text x="325" y="241" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#0066CC">456.2 hrs</text>
+
+                        <!-- Maintenance Items Title -->
+                        <text x="290" y="295" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#1A2332">Upcoming Maintenance</text>
+
+                        <!-- Maintenance Item 1 -->
+                        <rect x="290" y="310" width="200" height="80" rx="12" fill="white" filter="url(#shadow)"/>
+                        <circle cx="310" cy="340" r="8" fill="#10B981"/>
+                        <text x="330" y="345" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#1A2332">Annual</text>
+                        <text x="330" y="365" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6B7280">Due: Mar 2026</text>
+
+                        <!-- Maintenance Item 2 -->
+                        <rect x="510" y="310" width="200" height="80" rx="12" fill="white" filter="url(#shadow)"/>
+                        <circle cx="530" cy="340" r="8" fill="#0066CC"/>
+                        <text x="550" y="345" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#1A2332">100-Hour</text>
+                        <text x="550" y="365" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6B7280">Due: 500.0 hrs</text>
+
+                        <!-- Maintenance Item 3 -->
+                        <rect x="290" y="410" width="200" height="80" rx="12" fill="white" filter="url(#shadow)"/>
+                        <circle cx="310" cy="440" r="8" fill="#0066CC"/>
+                        <text x="330" y="445" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#1A2332">Oil Change</text>
+                        <text x="330" y="465" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6B7280">Due: 500.0 hrs</text>
+
+                        <!-- Maintenance Item 4 -->
+                        <rect x="510" y="410" width="200" height="80" rx="12" fill="white" filter="url(#shadow)"/>
+                        <circle cx="530" cy="440" r="8" fill="#F59E0B"/>
+                        <text x="550" y="445" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#1A2332">VOR Check</text>
+                        <text x="550" y="465" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6B7280">Due: Jan 2026</text>
+
+                        <!-- Shadow Filter -->
+                        <defs>
+                            <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feDropShadow dx="0" dy="3" stdDeviation="6" flood-opacity="0.12"/>
+                            </filter>
+                        </defs>
+                    </svg>
                 </div>
             </div>
         </div>
