@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .page-header {
-            background: linear-gradient(135deg, var(--navy) 0%, #2D3B54 100%);
+            background-color: var(--navy);
             color: var(--white);
             padding: 80px 0 60px;
             text-align: center;
@@ -26,13 +26,15 @@
 
         .content-section {
             padding: 80px 0;
+            background: var(--silver-gradient-panel);
         }
 
         .content-card {
-            background-color: var(--white);
+            background: var(--silver-tile);
             padding: 48px;
             border-radius: 16px;
-            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--silver-300);
+            box-shadow: var(--highlight-top), 0 1px 3px rgba(0, 0, 0, 0.03);
             max-width: 900px;
             margin: 0 auto;
         }
@@ -77,11 +79,15 @@
         }
 
         .highlight-box {
-            background-color: #EFF6FF;
-            border-left: 4px solid var(--accent);
+            background: var(--silver-tile);
+            border-left: 3px solid var(--accent);
+            border-top: 1px solid var(--silver-300);
+            border-right: 1px solid var(--silver-300);
+            border-bottom: 1px solid var(--silver-300);
             padding: 24px;
             border-radius: 8px;
             margin: 24px 0;
+            box-shadow: var(--highlight-top), 0 1px 3px rgba(0, 0, 0, 0.03);
         }
 
         .highlight-box p {
@@ -118,7 +124,7 @@
     <div class="page-header">
         <div class="container">
             <h1>Privacy Policy</h1>
-            <p>Your privacy is our priority</p>
+            <p>Security and discretion, built into every layer</p>
         </div>
     </div>
 
@@ -129,75 +135,74 @@
                 <p class="last-updated">Last Updated: January 9, 2025</p>
 
                 <div class="highlight-box">
-                    <p><strong>In Short:</strong> Venturi does not collect, store, or transmit any of your personal data. All aircraft and flight information stays on your device.</p>
+                    <p><strong>In Short:</strong> Venturi protects every record you trust to us with top-of-the-line security and a strict privacy-by-design approach. Industry-grade encryption, audited infrastructure, and tight access controls safeguard your data at every layer.</p>
                 </div>
 
                 <h2>1. Introduction</h2>
-                <p>Venturi ("we," "our," or "the app") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our aircraft maintenance and logbook application for iPad.</p>
+                <p>Venturi ("we," "our," or "the app") provides aircraft cost management, record-keeping, and forecasting tools for private pilots and aircraft co-owners. This Privacy Policy explains what information we handle, how we protect it, and the control you retain over your data.</p>
 
-                <h2>2. Information We Do NOT Collect</h2>
-                <p>Venturi is designed with privacy at its core. We do not collect, store, or have access to:</p>
+                <h2>2. Information We Handle</h2>
+                <p>To deliver Venturi's core features—cost splits, record organization, financial analysis, and forecasting—we process the information you choose to enter, which may include:</p>
                 <ul>
-                    <li>Your aircraft information (tail numbers, make, model, etc.)</li>
-                    <li>Your flight logbook data (flights, routes, times, pilots)</li>
-                    <li>Your maintenance records (inspections, squawks, notes)</li>
-                    <li>Your personal information (name, email, phone number)</li>
-                    <li>Your location or GPS data</li>
-                    <li>Your device information</li>
-                    <li>Any analytics or usage data</li>
+                    <li>Aircraft details (tail numbers, make, model, ownership structure)</li>
+                    <li>Flight, fuel, and maintenance records you log</li>
+                    <li>Financial figures (hourly rates, reserves, invoices, contributions)</li>
+                    <li>Account information (name, email) used to access your records securely</li>
+                    <li>Documents you upload (receipts, invoices, inspection records)</li>
+                </ul>
+                <p>You decide what to enter. Venturi does not collect ambient device data, location, contacts, or browsing history.</p>
+
+                <h2>3. How Your Data is Protected</h2>
+                <p>Your information is safeguarded through multiple, independently verified layers:</p>
+                <ul>
+                    <li><strong>Encryption in transit:</strong> All traffic is protected by TLS 1.3</li>
+                    <li><strong>Encryption at rest:</strong> Records are stored with AES-256 encryption</li>
+                    <li><strong>Access control:</strong> Strict role-based access internally and biometric protection on-device</li>
+                    <li><strong>Audited infrastructure:</strong> Hosted on providers with SOC 2 Type II certification</li>
+                    <li><strong>Continuous monitoring:</strong> Anomaly detection and ongoing security review</li>
                 </ul>
 
-                <h2>3. How Your Data is Stored</h2>
-                <p>All data you enter into Venturi is stored locally on your iPad using Apple's UserDefaults storage mechanism. This means:</p>
+                <h2>4. Privacy by Design</h2>
+                <p>Venturi is built for owners who value discretion. We never sell your information, never use your records to train external models, and never share data with advertisers. The records you enter exist solely to serve you and the co-owners you explicitly invite into your account.</p>
+
+                <h2>5. Third-Party Services</h2>
+                <p><strong>FAA Aircraft Registry:</strong> If you look up an aircraft by tail number, Venturi queries the public FAA Aircraft Registry to retrieve registration details. We do not retain a log of these lookups beyond what is necessary to populate your record.</p>
+                <p><strong>Infrastructure providers:</strong> We host the app and store your encrypted records on vetted, security-certified cloud infrastructure providers who are contractually bound to handle data with the same standards we apply.</p>
+
+                <h2>6. Data Exports</h2>
+                <p>Your data remains yours. Venturi lets you export any record, log, or financial summary to CSV or PDF on demand. Exports are generated and delivered through secure, encrypted channels.</p>
+
+                <h2>7. Children's Privacy</h2>
+                <p>Venturi is intended for licensed pilots and aircraft owners and is not designed for anyone under the age of 18.</p>
+
+                <h2>8. Security Practices</h2>
+                <p>The security of your data is enforced through multiple layers, both on your device and in our infrastructure:</p>
                 <ul>
-                    <li>Your data never leaves your device</li>
-                    <li>We have no servers or databases that store your information</li>
-                    <li>Your data is backed up automatically through your iPad's standard backup process (iCloud or iTunes)</li>
-                    <li>Only you have access to your data</li>
-                </ul>
-
-                <h2>4. Third-Party Services</h2>
-                <p><strong>FAA Aircraft Registry:</strong> During the onboarding process, if you choose to look up your aircraft by tail number, Venturi makes a single request to the FAA Aircraft Registry API to retrieve public aircraft information. This is done directly from your device to the FAA's servers. We do not log, store, or track these requests.</p>
-                <p>No other third-party services are used in the app.</p>
-
-                <h2>5. Data Exports</h2>
-                <p>Venturi allows you to export your logbook data to CSV or PDF formats. These exports are:</p>
-                <ul>
-                    <li>Created locally on your device</li>
-                    <li>Saved to your device's temporary storage</li>
-                    <li>Shared using iOS's standard sharing mechanisms (AirDrop, email, etc.)</li>
-                    <li>Not transmitted to our servers or any third parties</li>
-                </ul>
-
-                <h2>6. Children's Privacy</h2>
-                <p>Venturi does not collect any personal information from anyone, including children under the age of 13. The app is designed for aircraft owners and pilots, who are typically adults.</p>
-
-                <h2>7. Security</h2>
-                <p>Since all your data is stored locally on your device, the security of your data depends on:</p>
-                <ul>
-                    <li>Your device's passcode/Face ID/Touch ID protection</li>
-                    <li>Your iPad's encryption (enabled by default on iOS)</li>
-                    <li>Your backup security (iCloud or iTunes backups)</li>
+                    <li>Device-level protection via passcode, Face ID, or Touch ID</li>
+                    <li>End-to-end encryption for data in transit and at rest</li>
+                    <li>Audited cloud infrastructure with SOC 2 Type II certification</li>
+                    <li>Continuous security monitoring and anomaly detection</li>
                 </ul>
                 <p>We recommend keeping your device locked and secured at all times.</p>
 
-                <h2>8. Your Rights</h2>
-                <p>Since we don't collect your data, you don't need to request access, deletion, or modification from us. You have complete control over your data at all times:</p>
+                <h2>9. Your Rights</h2>
+                <p>You retain full control over the information in your account at all times:</p>
                 <ul>
-                    <li>Delete data by removing items in the app or deleting the app entirely</li>
-                    <li>Export data using the built-in export features</li>
-                    <li>Back up data through your iPad's standard backup process</li>
+                    <li>Access, edit, or remove any record at any time</li>
+                    <li>Export your complete dataset in a portable format</li>
+                    <li>Permanently delete your account and the associated data</li>
+                    <li>Request a written copy of our security practices on demand</li>
                 </ul>
 
-                <h2>9. Changes to This Policy</h2>
-                <p>If we ever change how we handle data (for example, by adding cloud sync features), we will update this Privacy Policy and notify you within the app. The "Last Updated" date at the top of this page will reflect any changes.</p>
+                <h2>10. Changes to This Policy</h2>
+                <p>If we materially update how we handle data, we will revise this Privacy Policy and notify account holders in advance. The "Last Updated" date at the top of this page always reflects the current version.</p>
 
-                <h2>10. Contact Us</h2>
-                <p>If you have any questions about this Privacy Policy or how Venturi handles your data, please contact us:</p>
-                <p><strong>Email:</strong> privacy@venturiaviation.com</p>
+                <h2>11. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy or how Venturi protects your data, please reach out:</p>
+                <p><strong>Email:</strong> support@venturimx.co</p>
 
-                <h2>11. Consent</h2>
-                <p>By using Venturi, you consent to this Privacy Policy. Since we don't collect your data, there's nothing to consent to beyond understanding that your data stays on your device.</p>
+                <h2>12. Consent</h2>
+                <p>By using Venturi, you consent to the practices described in this Privacy Policy. We hold ourselves to a standard we would expect from any service trusted with our own aircraft records.</p>
             </div>
         </div>
     </section>

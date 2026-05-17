@@ -6,15 +6,41 @@
 }
 
 :root {
-    --navy: #1A2332;
-    --accent: #0066CC;
-    --light-bg: #F5F7FA;
-    --text-primary: #1A2332;
-    --text-secondary: #6B7280;
-    --success: #10B981;
+    /* Premium machined-metal silver, sharp charcoal text, specular highlights */
+    --navy: #3F4754;            /* dark surfaces */
+    --accent: #334155;          /* deep muted slate blue */
+    --accent-hover: #1E293B;    /* darker slate (hover state) */
+
+    /* Strictly monochromatic silver scale (no color, no blue tint) */
     --white: #FFFFFF;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --silver-50: #FAFAFA;       /* almost-white */
+    --silver-100: #F4F4F5;      /* light silver */
+    --silver-200: #E4E4E7;      /* mid silver */
+    --silver-300: #D4D4D8;      /* deeper silver (borders, definition) */
+
+    /* Backwards-compat aliases (in case anything still references these) */
+    --light-bg: #F4F4F5;
+    --silver: #E4E4E7;
+    --silver-soft: #F4F4F5;
+    --border: #E4E4E7;
+
+    /* Rich charcoal text — sharp contrast against silver */
+    --text-primary: #18181B;    /* zinc-900 */
+    --text-secondary: #52525B;  /* zinc-600 */
+
+    --success: #10B981;
+
+    /* Specular highlights & diffused shadows */
+    --highlight-top: inset 0 1px 0 0 rgba(255, 255, 255, 1);
+    --highlight-top-dark: inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.03);
+
+    /* Subtle metallic silver gradients (strictly monochromatic) */
+    --silver-gradient: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 55%, #F4F4F5 100%);
+    --silver-gradient-soft: linear-gradient(180deg, #FFFFFF 0%, #F4F4F5 100%);
+    --silver-gradient-panel: linear-gradient(180deg, #FAFAFA 0%, #F4F4F5 50%, #E4E4E7 100%);
+    --silver-tile: linear-gradient(180deg, #FFFFFF 0%, #F4F4F5 50%, #E4E4E7 100%);  /* the icon-card finish */
 }
 
 body {
@@ -32,8 +58,9 @@ body {
 
 /* Navigation */
 .navbar {
-    background-color: var(--white);
-    box-shadow: var(--shadow);
+    background: var(--silver-gradient-soft);
+    border-bottom: 1px solid var(--silver-300);
+    box-shadow: var(--highlight-top), 0 1px 2px rgba(0, 0, 0, 0.02);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -46,13 +73,15 @@ body {
     padding: 16px 0;
 }
 
-.logo {
+.logo,
+a.logo {
     display: flex;
     align-items: center;
     gap: 12px;
     font-size: 24px;
     font-weight: 700;
     color: var(--navy);
+    text-decoration: none;
 }
 
 .logo-icon {
@@ -77,7 +106,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--navy) 0%, #2D3B54 100%);
+    background-color: var(--navy);
     color: var(--white);
     padding: 120px 0;
 }
@@ -131,12 +160,13 @@ body {
 .btn-primary {
     background-color: var(--accent);
     color: var(--white);
+    box-shadow: var(--highlight-top-dark), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .btn-primary:hover {
-    background-color: #0052A3;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 102, 204, 0.3);
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--highlight-top-dark), 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .btn-secondary {
@@ -171,10 +201,11 @@ body {
     width: 100%;
     max-width: 500px;
     aspect-ratio: 4/3;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--silver-tile);
+    border: 1px solid var(--silver-300);
     border-radius: 24px;
     padding: 16px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--highlight-top), 0 24px 60px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .ipad-screen {
@@ -187,7 +218,7 @@ body {
 /* Features Section */
 .features {
     padding: 120px 0;
-    background-color: var(--light-bg);
+    background: var(--silver-gradient-panel);
 }
 
 .section-header {
@@ -216,28 +247,32 @@ body {
 }
 
 .feature-card {
-    background-color: var(--white);
+    background: var(--silver-tile);
     padding: 40px;
     border-radius: 16px;
-    box-shadow: var(--shadow);
-    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--silver-300);
+    box-shadow: var(--highlight-top), 0 1px 3px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
 .feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    border-color: #BFBFC4;
+    box-shadow: var(--highlight-top), 0 8px 24px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .feature-icon {
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, var(--accent), #667eea);
+    background: var(--silver-tile);
+    border: 1px solid var(--silver-300);
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
-    color: var(--white);
+    color: var(--text-primary);
+    box-shadow: var(--highlight-top), 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
 .feature-card h3 {
@@ -267,12 +302,13 @@ body {
 
 .screenshot-placeholder {
     aspect-ratio: 4/3;
-    background: linear-gradient(135deg, var(--light-bg), #E5E7EB);
+    background: var(--silver-gradient-panel);
+    border: 1px solid var(--silver-300);
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow);
+    box-shadow: var(--highlight-top), 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
 .screenshot-placeholder p {
@@ -284,7 +320,7 @@ body {
 /* CTA Section */
 .cta {
     padding: 100px 0;
-    background: linear-gradient(135deg, var(--accent) 0%, #667eea 100%);
+    background-color: var(--navy);
     color: var(--white);
     text-align: center;
 }
@@ -353,6 +389,107 @@ body {
     font-size: 14px;
 }
 
+/* Email Signup Section */
+.signup {
+    padding: 100px 0;
+    background: var(--silver-gradient);
+    border-top: 1px solid var(--silver-200);
+    border-bottom: 1px solid var(--silver-200);
+}
+
+.signup-container {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.signup h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+}
+
+.signup .signup-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.signup-form {
+    display: flex;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.signup-input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 1px solid var(--silver-300);
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    background: var(--silver-tile);
+    color: var(--text-primary);
+    box-shadow: var(--highlight-top), 0 1px 2px rgba(0, 0, 0, 0.03);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.signup-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: var(--highlight-top), 0 0 0 3px rgba(51, 65, 85, 0.1);
+}
+
+.signup-submit {
+    padding: 14px 24px;
+    background-color: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--highlight-top-dark), 0 1px 2px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.signup-submit:hover:not(:disabled) {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--highlight-top-dark), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.signup-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.signup-message {
+    margin-top: 16px;
+    font-size: 15px;
+    min-height: 24px;
+    font-weight: 500;
+}
+
+.signup-message.success {
+    color: var(--success);
+}
+
+.signup-message.error {
+    color: #DC2626;
+}
+
+.signup-disclaimer {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero {
@@ -399,6 +536,22 @@ body {
 
     .cta h2 {
         font-size: 32px;
+    }
+
+    .signup {
+        padding: 60px 0;
+    }
+
+    .signup h2 {
+        font-size: 28px;
+    }
+
+    .signup-form {
+        flex-direction: column;
+    }
+
+    .signup-submit {
+        width: 100%;
     }
 
     .footer-content {
