@@ -33,10 +33,10 @@
 // CONFIGURATION
 // ============================================================================
 
-const USE_SUPABASE = false;  // set to true once Supabase credentials are filled in
+const USE_SUPABASE = true;
 
-const SUPABASE_URL = 'YOUR_SUPABASE_URL_HERE';            // e.g. https://abc123.supabase.co
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY_HERE';  // the public anon key
+const SUPABASE_URL = 'https://crkeiitgmglbcbbyncme.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_Vh1Afm2RFFeK8vM0itPF-A_tyYaR81E';
 
 // ============================================================================
 // FORM HANDLING
