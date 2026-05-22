@@ -1,93 +1,55 @@
 # Venturi Website
 
-Official website for the Venturi aircraft maintenance app.
+Marketing site for the Venturi iPad app — aircraft cost management for co-owners and private pilots.
 
-## Overview
+## Stack
 
-This is a simple, static website designed to support the Venturi iPad app's App Store submission. It provides:
+Pure static HTML/CSS/JS. No build step, no dependencies. Deployed via GitHub Pages.
 
-- Product information and features
-- Support documentation
-- Privacy Policy
-- Terms of Service
-
-## Structure
+## Files
 
 ```
-Venturi_website/
-├── index.html          # Main landing page
-├── support.html        # Support & FAQ page
-├── privacy.html        # Privacy Policy
-├── terms.html          # Terms of Service
-├── styles.css          # All styling
-└── README.md          # This file
+├── index.html      # Landing page
+├── styles.css      # All styles for index.html
+├── signup.js       # Supabase early-access email capture
+├── support.html    # Support & FAQ
+├── privacy.html    # Privacy Policy
+├── terms.html      # Terms of Service
+└── CLAUDE.md       # Full design system + editing guide for Claude Code
 ```
 
-## Local Development
+## Local dev
 
-To view the website locally:
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000
+```
 
-1. Open `index.html` in your web browser
-2. Or use a simple HTTP server:
-   ```bash
-   python3 -m http.server 8000
-   ```
-   Then visit `http://localhost:8000`
+## Deploy
 
-## Deployment
+Push to `main` — GitHub Pages deploys automatically.
 
-### Option 1: GitHub Pages
-1. Create a new repository on GitHub
-2. Push this folder to the repository
-3. Enable GitHub Pages in repository settings
-4. Your site will be available at `https://yourusername.github.io/repository-name`
+```bash
+git add .
+git commit -m "your message"
+git push origin main
+```
 
-### Option 2: Netlify
-1. Create an account at netlify.com
-2. Drag and drop this folder onto Netlify
-3. Your site will be live instantly with a custom URL
-4. You can connect a custom domain if desired
+## Editing with Claude Code
 
-### Option 3: Vercel
-1. Create an account at vercel.com
-2. Import this folder as a new project
-3. Deploy with one click
+Open `CLAUDE.md` for the full design system reference, section map, color palette, and notes on what to change when the app launches.
 
 ## Design
 
-The website matches the Venturi app's design system:
-- **Navy Blue** (#1A2332) for primary branding
-- **Accent Blue** (#0066CC) for CTAs and highlights
-- **Clean, modern aesthetic** matching the iPad app
-- **Responsive design** works on mobile and desktop
+- **Theme**: Midnight Navy dark (`#071524`) with Inter typeface
+- **Primary accent**: Amber `#F59E0B` — all CTAs and signup elements
+- **Secondary accent**: Blue `#3B82F6` — features and informational elements
+- **Textures**: CSS-only (dot grids, crosshatch, diagonal stripes, grain overlay)
 
-## For App Store Submission
+## App Store requirements
 
-Apple requires:
-- ✅ Support URL (support.html)
-- ✅ Privacy Policy URL (privacy.html)
-- ✅ Marketing URL (index.html)
-
-All three are included and ready to use.
-
-## Customization
-
-Before deploying:
-1. Update email addresses (currently placeholder: support@venturiaviation.com)
-2. Add App Store download link when available
-3. Replace screenshot placeholders with actual app screenshots
-4. Consider adding your own domain name
-
-## Screenshots
-
-To add actual screenshots:
-1. Take screenshots of your app (ideally 2048x2732 for iPad)
-2. Save them in an `images/` folder
-3. Update the screenshot placeholders in `index.html`:
-   ```html
-   <img src="images/dashboard.png" alt="Dashboard">
-   ```
-
-## License
+- ✅ Support URL → `support.html`
+- ✅ Privacy Policy URL → `privacy.html`
+- ✅ Marketing URL → `index.html`
 
 © 2025 Venturi Aviation. All rights reserved.

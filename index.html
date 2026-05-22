@@ -8,239 +8,315 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="index.html" class="logo">
-                    <span class="logo-text">Venturi</span>
-                </a>
-                <div class="nav-links">
-                    <a href="#features">Features</a>
-                    <a href="#preview">Preview</a>
-                    <a href="support.html">Support</a>
-                    <a href="privacy.html">Privacy</a>
+
+<!-- NAV -->
+<nav>
+    <div class="container">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Venturi</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#app-preview">Preview</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="#preview" class="nav-cta">Get Early Access</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <div class="eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    Beta launching soon
+                </div>
+                <h1>Aircraft Ownership,<br><em>Organized.</em></h1>
+                <p class="hero-subtitle">Split costs between co-owners, organize every record, and forecast expenses with precision. Built for private pilots who run their aircraft like a business.</p>
+
+                <p class="hero-signup-label">Join the beta — be first to fly it.</p>
+                <form class="hero-signup-form" id="heroSignupForm">
+                    <input type="email" class="hero-input" id="heroEmail" placeholder="your@email.com" required autocomplete="email">
+                    <button type="submit" class="hero-submit">Get Early Access</button>
+                </form>
+
+                <div class="hero-meta">
+                    <a href="#" class="hero-app-store">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        App Store
+                        <span class="coming-soon-tag">Coming Soon</span>
+                    </a>
+                    <span class="hero-note">iPad · iOS 17.0+</span>
                 </div>
             </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Aircraft Ownership,<br>Organized.</h1>
-                    <p class="hero-subtitle">Split costs between co-owners, organize every record, and forecast expenses with precision. Built for private pilots who run their aircraft like a business.</p>
-                    <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary">
-                            <svg class="apple-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                            </svg>
-                            Download on App Store
-                        </a>
-                        <a href="#features" class="btn btn-secondary">Learn More</a>
-                    </div>
-                    <p class="hero-note">Available for iPad • iOS 17.0 or later</p>
-                </div>
-                <div class="hero-image">
-                    <svg class="ipad-mockup" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-                        <!-- iPad Frame (Landscape) -->
-                        <rect x="40" y="60" width="720" height="480" rx="32" fill="#1A2332" stroke="#2D3B54" stroke-width="3"/>
-
-                        <!-- Screen -->
-                        <rect x="60" y="80" width="680" height="440" rx="20" fill="#F5F7FA"/>
-
-                        <!-- Sidebar -->
-                        <rect x="60" y="80" width="200" height="440" rx="20" fill="#1A2332"/>
-                        <text x="80" y="120" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="white">Venturi</text>
-
-                        <!-- Nav Items -->
-                        <rect x="70" y="150" width="180" height="40" rx="8" fill="#0066CC"/>
-                        <text x="85" y="176" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="white">Dashboard</text>
-
-                        <text x="85" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#9CA3AF">Logbook</text>
-                        <text x="85" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#9CA3AF">Maintenance</text>
-                        <text x="85" y="300" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#9CA3AF">Analytics</text>
-
-                        <!-- Main Content Area -->
-                        <text x="290" y="120" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#1A2332">Dashboard</text>
-
-                        <!-- Aircraft Card -->
-                        <rect x="290" y="150" width="420" height="110" rx="16" fill="white" filter="url(#shadow)"/>
-                        <text x="310" y="182" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#1A2332">N3897Y</text>
-                        <text x="310" y="208" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#6B7280">Cessna 172S Skyhawk</text>
-                        <rect x="310" y="220" width="100" height="30" rx="8" fill="#EFF6FF"/>
-                        <text x="325" y="241" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#0066CC">456.2 hrs</text>
-
-                        <!-- Maintenance Items Title -->
-                        <text x="290" y="295" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#1A2332">Upcoming Maintenance</text>
-
-                        <!-- Maintenance Item 1 -->
-                        <rect x="290" y="310" width="200" height="80" rx="12" fill="white" filter="url(#shadow)"/>
-                        <circle cx="310" cy="340" r="8" fill="#10B981"/>
-                        <text x="330" y="345" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#1A2332">Annual</text>
-                        <text x="330" y="365" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6B7280">Due: Mar 2026</text>
-
-                        <!-- Maintenance Item 2 -->
-                        <rect x="510" y="310" width="200" height="80" rx="12" fill="white" filter="url(#shadow)"/>
-                        <circle cx="530" cy="340" r="8" fill="#0066CC"/>
-                        <text x="550" y="345" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#1A2332">100-Hour</text>
-                        <text x="550" y="365" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6B7280">Due: 500.0 hrs</text>
-
-                        <!-- Maintenance Item 3 -->
-                        <rect x="290" y="410" width="200" height="80" rx="12" fill="white" filter="url(#shadow)"/>
-                        <circle cx="310" cy="440" r="8" fill="#0066CC"/>
-                        <text x="330" y="445" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#1A2332">Oil Change</text>
-                        <text x="330" y="465" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6B7280">Due: 500.0 hrs</text>
-
-                        <!-- Maintenance Item 4 -->
-                        <rect x="510" y="410" width="200" height="80" rx="12" fill="white" filter="url(#shadow)"/>
-                        <circle cx="530" cy="440" r="8" fill="#F59E0B"/>
-                        <text x="550" y="445" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#1A2332">VOR Check</text>
-                        <text x="550" y="465" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6B7280">Due: Jan 2026</text>
-
-                        <!-- Shadow Filter -->
-                        <defs>
-                            <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-                                <feDropShadow dx="0" dy="3" stdDeviation="6" flood-opacity="0.12"/>
-                            </filter>
-                        </defs>
+            <div class="hero-image">
+                <div class="ipad-mockup">
+                    <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="800" height="600" rx="12" fill="#0F1F38"/>
+                        <rect x="0" y="0" width="200" height="600" rx="12" fill="#0A1628"/>
+                        <text x="20" y="40" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="700" fill="white">Venturi</text>
+                        <rect x="10" y="58" width="180" height="38" rx="8" fill="rgba(59,130,246,0.2)"/>
+                        <text x="26" y="82" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="#60A5FA">Dashboard</text>
+                        <text x="26" y="128" font-family="Inter,system-ui,sans-serif" font-size="14" fill="rgba(255,255,255,0.4)">Logbook</text>
+                        <text x="26" y="168" font-family="Inter,system-ui,sans-serif" font-size="14" fill="rgba(255,255,255,0.4)">Maintenance</text>
+                        <text x="26" y="208" font-family="Inter,system-ui,sans-serif" font-size="14" fill="rgba(255,255,255,0.4)">Analytics</text>
+                        <text x="26" y="248" font-family="Inter,system-ui,sans-serif" font-size="14" fill="rgba(255,255,255,0.4)">Co-Owners</text>
+                        <text x="220" y="36" font-family="Inter,system-ui,sans-serif" font-size="20" font-weight="700" fill="white">Dashboard</text>
+                        <rect x="220" y="54" width="560" height="100" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <text x="240" y="84" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="700" fill="white">N3897Y</text>
+                        <text x="240" y="106" font-family="Inter,system-ui,sans-serif" font-size="13" fill="rgba(255,255,255,0.5)">Cessna 172S Skyhawk</text>
+                        <rect x="240" y="118" width="90" height="24" rx="6" fill="rgba(59,130,246,0.15)"/>
+                        <text x="252" y="135" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#60A5FA">456.2 hrs</text>
+                        <text x="220" y="186" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="600" fill="rgba(255,255,255,0.9)">Upcoming Maintenance</text>
+                        <rect x="220" y="200" width="175" height="80" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <circle cx="244" cy="232" r="7" fill="#34D399"/>
+                        <text x="260" y="236" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="white">Annual</text>
+                        <text x="260" y="256" font-family="Inter,system-ui,sans-serif" font-size="13" fill="rgba(255,255,255,0.4)">Due: Mar 2026</text>
+                        <rect x="410" y="200" width="175" height="80" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <circle cx="434" cy="232" r="7" fill="#3B82F6"/>
+                        <text x="450" y="236" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="white">100-Hour</text>
+                        <text x="450" y="256" font-family="Inter,system-ui,sans-serif" font-size="13" fill="rgba(255,255,255,0.4)">Due: 500.0 hrs</text>
+                        <rect x="220" y="296" width="175" height="80" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <circle cx="244" cy="328" r="7" fill="#3B82F6"/>
+                        <text x="260" y="332" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="white">Oil Change</text>
+                        <text x="260" y="352" font-family="Inter,system-ui,sans-serif" font-size="13" fill="rgba(255,255,255,0.4)">Due: 500.0 hrs</text>
+                        <rect x="410" y="296" width="175" height="80" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <circle cx="434" cy="328" r="7" fill="#F59E0B"/>
+                        <text x="450" y="332" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="white">VOR Check</text>
+                        <text x="450" y="352" font-family="Inter,system-ui,sans-serif" font-size="13" fill="rgba(255,255,255,0.4)">Due: Jan 2026</text>
+                        <text x="220" y="416" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="600" fill="rgba(255,255,255,0.9)">Monthly Costs</text>
+                        <rect x="220" y="430" width="360" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+                        <rect x="220" y="430" width="240" height="8" rx="4" fill="rgba(59,130,246,0.6)"/>
+                        <text x="590" y="440" font-family="Inter,system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)">$1,240</text>
+                        <rect x="220" y="450" width="360" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+                        <rect x="220" y="450" width="160" height="8" rx="4" fill="rgba(52,211,153,0.6)"/>
+                        <text x="590" y="460" font-family="Inter,system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)">$830</text>
                     </svg>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>Everything you need to run an aircraft like a business.</h2>
-                <p>From cost splits between co-owners to forecasting your next annual—Venturi brings clarity to the financial side of aviation.</p>
+<!-- STATS -->
+<div class="stats-bar">
+    <div class="container">
+        <div class="stats-inner">
+            <div class="stat">
+                <div class="stat-number">10<span>+</span></div>
+                <div class="stat-label">Cost categories tracked</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">360<span>°</span></div>
+                <div class="stat-label">Aircraft visibility</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Missed maintenance due dates</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+    <div class="container">
+        <div class="section-label">Features</div>
+        <div class="section-header">
+            <h2>Everything you need to run an aircraft like a business.</h2>
+            <p>From cost splits between co-owners to forecasting your next annual — Venturi brings clarity to the financial side of aviation.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>Cost Splits for Co-Owners</h3>
+                <p>Share aircraft costs transparently with your co-ownership group. Track everyone's hours, expenses, and contributions in real time — so reconciliations are quick and trust stays high.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <h3>Maintenance Records</h3>
+                <p>Log every inspection, squawk, and AD in one organized place. Get reminded before anything is due, whether it's based on hours or the calendar.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </div>
+                <h3>Digital Flight Logbook</h3>
+                <p>Log flights in seconds. Hours, routes, categories, pilots — all tracked and ready to export as CSV or PDF on demand.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </div>
+                <h3>Know Your Numbers</h3>
+                <p>See exactly what every flight costs. Break down expenses by aircraft, category, and time period with charts that make the picture obvious at a glance.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                </div>
+                <h3>Forecast What's Ahead</h3>
+                <p>Project your aircraft's expenses over the next month, quarter, or year. Plan for annuals, overhauls, and reserve contributions with confidence.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Top-of-the-Line Security</h3>
+                <p>Your data is protected with industry-grade encryption and strict access controls. Privacy by design — the way it should be.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- APP PREVIEW -->
+<section class="app-preview" id="app-preview">
+    <div class="container">
+        <div class="preview-grid">
+            <div class="preview-visual">
+                <div class="ipad-mockup" style="max-width:420px;">
+                    <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="800" height="600" rx="12" fill="#0F1F38"/>
+                        <rect x="0" y="0" width="200" height="600" rx="12" fill="#0A1628"/>
+                        <text x="20" y="40" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="700" fill="white">Venturi</text>
+                        <text x="20" y="80" font-family="Inter,system-ui,sans-serif" font-size="13" fill="rgba(255,255,255,0.4)">Dashboard</text>
+                        <rect x="10" y="92" width="180" height="38" rx="8" fill="rgba(59,130,246,0.2)"/>
+                        <text x="26" y="116" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="#60A5FA">Logbook</text>
+                        <text x="20" y="154" font-family="Inter,system-ui,sans-serif" font-size="13" fill="rgba(255,255,255,0.4)">Maintenance</text>
+                        <text x="20" y="192" font-family="Inter,system-ui,sans-serif" font-size="13" fill="rgba(255,255,255,0.4)">Analytics</text>
+                        <text x="220" y="36" font-family="Inter,system-ui,sans-serif" font-size="20" font-weight="700" fill="white">Logbook</text>
+                        <text x="220" y="58" font-family="Inter,system-ui,sans-serif" font-size="13" fill="rgba(255,255,255,0.4)">May 2026 · 14.2 hrs</text>
+                        <rect x="220" y="72" width="560" height="58" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <text x="240" y="98" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="white">KLAX → KSFO</text>
+                        <text x="240" y="118" font-family="Inter,system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)">May 19 · 2.3 hrs · N3897Y</text>
+                        <text x="748" y="104" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#60A5FA" text-anchor="end">$287</text>
+                        <rect x="220" y="142" width="560" height="58" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <text x="240" y="168" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="white">KSFO → KOAK</text>
+                        <text x="240" y="188" font-family="Inter,system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)">May 18 · 0.8 hrs · N3897Y</text>
+                        <text x="748" y="174" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#60A5FA" text-anchor="end">$99</text>
+                        <rect x="220" y="212" width="560" height="58" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <text x="240" y="238" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="white">KOAK → KCCR</text>
+                        <text x="240" y="258" font-family="Inter,system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)">May 17 · 0.5 hrs · N3897Y</text>
+                        <text x="748" y="244" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#60A5FA" text-anchor="end">$62</text>
+                        <text x="220" y="306" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="600" fill="rgba(255,255,255,0.9)">Analytics — May 2026</text>
+                        <rect x="220" y="320" width="560" height="160" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+                        <polyline points="240,460 300,420 360,440 420,390 480,410 540,360 600,380 660,340 720,360 760,330" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+                        <polyline points="240,470 300,455 360,465 420,445 480,460 540,440 600,450 660,430 720,442 760,425" fill="none" stroke="rgba(59,130,246,0.3)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 3"/>
+                        <text x="240" y="500" font-family="Inter,system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.3)">Apr</text>
+                        <text x="360" y="500" font-family="Inter,system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.3)">May</text>
+                        <text x="480" y="500" font-family="Inter,system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.3)">Jun</text>
+                        <text x="600" y="500" font-family="Inter,system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.3)">Jul</text>
+                        <text x="720" y="500" font-family="Inter,system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.3)">Aug</text>
+                        <text x="220" y="540" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="white">$4,830</text>
+                        <text x="220" y="558" font-family="Inter,system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)">Total this quarter</text>
+                        <text x="500" y="540" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#34D399">↓ 8.2%</text>
+                        <text x="500" y="558" font-family="Inter,system-ui,sans-serif" font-size="12" fill="rgba(255,255,255,0.4)">vs last quarter</text>
+                    </svg>
+                </div>
             </div>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
+            <div class="preview-text">
+                <div class="section-label" style="text-align:left; margin-bottom:12px;">App Preview</div>
+                <h2>See every flight.<br>Know every dollar.</h2>
+                <p>Venturi gives you a complete financial picture of your aircraft — from the last oil change to how much your Tuesday morning pattern work actually costs per hour.</p>
+                <div class="preview-features">
+                    <div class="preview-item">
+                        <span class="preview-dot"></span>
+                        <p><strong>Logbook</strong> — every flight logged with costs, routes, categories, and pilot time. Export to CSV or PDF in one tap.</p>
                     </div>
-                    <h3>Cost Splits for Co-Owners</h3>
-                    <p>Share aircraft costs transparently with your co-ownership group. Track everyone's hours, expenses, and contributions in real time—so reconciliations are quick and trust stays high.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                        </svg>
+                    <div class="preview-item">
+                        <span class="preview-dot"></span>
+                        <p><strong>Analytics</strong> — monthly and quarterly cost charts so you can see trends, not just totals.</p>
                     </div>
-                    <h3>Maintenance Records</h3>
-                    <p>Log every inspection, squawk, and AD in one organized place. Get reminded before anything is due, whether it's based on hours or the calendar.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                        </svg>
+                    <div class="preview-item">
+                        <span class="preview-dot"></span>
+                        <p><strong>Co-ownership</strong> — each pilot's share is calculated automatically. No spreadsheets, no disputes.</p>
                     </div>
-                    <h3>Digital Flight Logbook</h3>
-                    <p>Log flights in seconds. Hours, routes, categories, pilots—all tracked and ready to view as a list, calendar, or export to CSV or PDF on demand.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="18" y1="20" x2="18" y2="10"/>
-                            <line x1="12" y1="20" x2="12" y2="4"/>
-                            <line x1="6" y1="20" x2="6" y2="14"/>
-                        </svg>
+                    <div class="preview-item">
+                        <span class="preview-dot"></span>
+                        <p><strong>Forecasting</strong> — plan for the annual, engine overhaul, and reserve contributions months in advance.</p>
                     </div>
-                    <h3>Know Your Numbers</h3>
-                    <p>See exactly what every flight costs. Break down expenses by aircraft, category, and time period with charts that make the financial picture obvious at a glance.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                            <polyline points="17 6 23 6 23 12"/>
-                        </svg>
-                    </div>
-                    <h3>Forecast What's Ahead</h3>
-                    <p>Project your aircraft's expenses over the next month, quarter, or year. Plan for annuals, overhauls, and reserve contributions with confidence.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                    </div>
-                    <h3>Top-of-the-Line Security</h3>
-                    <p>Your data is protected with industry-grade encryption, secure infrastructure, and strict access controls. Privacy by design—the way it should be.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Email Signup / Preview Section -->
-    <section id="preview" class="signup">
-        <div class="container">
-            <div class="signup-container">
-                <h2>Preview Venturi Before Launch</h2>
-                <p class="signup-subtitle">Drop your email below and we'll send you early access before Venturi opens to the public.</p>
-                <form class="signup-form" id="signupForm">
-                    <input type="email" class="signup-input" id="signupEmail" placeholder="your@email.com" required autocomplete="email">
-                    <button type="submit" class="signup-submit" id="signupSubmit">Get Early Access</button>
-                </form>
-                <p class="signup-message" id="signupMessage"></p>
-                <p class="signup-disclaimer">No spam. Just one email when Venturi is ready for you.</p>
+<!-- EMAIL SIGNUP -->
+<section class="signup" id="preview">
+    <div class="container">
+        <div class="signup-container">
+            <div class="signup-badge">
+                <span class="eyebrow-dot"></span>
+                Beta Access
+            </div>
+            <h2>Be the first to fly <span>Venturi.</span></h2>
+            <p class="signup-subtitle">Drop your email and we'll send you early access before Venturi opens to the public. No spam — just one email when it's ready.</p>
+
+            <form class="signup-form" id="signupForm">
+                <input type="email" class="signup-input" id="signupEmail" placeholder="your@email.com" required autocomplete="email">
+                <button type="submit" class="signup-submit" id="signupSubmit">Get Early Access</button>
+            </form>
+            <p class="signup-message" id="signupMessage"></p>
+            <p class="signup-disclaimer">Available for iPad · iOS 17.0 or later · Launching soon</p>
+
+            <div class="signup-perks">
+                <div class="perk"><span class="perk-dot"></span>First access when beta opens</div>
+                <div class="perk"><span class="perk-dot"></span>Shape the product before launch</div>
+                <div class="perk"><span class="perk-dot"></span>No spam, ever</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to take control of your aircraft costs?</h2>
-            <p>Download Venturi and bring order to the financial side of aviation.</p>
-            <a href="#" class="btn btn-primary btn-large">
-                <svg class="apple-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                </svg>
-                Download on App Store
-            </a>
-        </div>
-    </section>
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <h2>Ready to take control of your aircraft costs?</h2>
+        <p>Join the waitlist and be first in the cockpit.</p>
+        <a href="#preview" class="btn-amber-outline">
+            Get Early Access
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span>Venturi</span>
-                </div>
-                <div class="footer-links">
-                    <a href="support.html">Support</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Venturi Aviation. All rights reserved.</p>
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">Venturi</div>
+            <div class="footer-links">
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Venturi Aviation. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
-    <!-- Supabase email signup -->
-    <script src="signup.js"></script>
+<script src="signup.js"></script>
+<script>
+    // Wire hero form into the main signup form
+    document.getElementById('heroSignupForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('heroEmail').value;
+        document.getElementById('signupEmail').value = email;
+        document.getElementById('signupForm').dispatchEvent(new Event('submit', { bubbles: true }));
+        document.getElementById('preview').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
 </body>
 </html>
