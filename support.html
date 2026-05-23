@@ -1,164 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - Venturi</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .page-header {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 80px 0 60px;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support - Venturi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        .page-header h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
+:root {
+  --blue:   #4260FF;
+  --sky:    #0EA5E9;
+  --glow:   rgba(66,96,255,0.26);
+  --text:   #0C1628;
+  --text-2: #374060;
+  --text-3: #8994B8;
+}
 
-        .page-header p {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.9);
-        }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #D8EDFF 0%, #E4F3FF 10%, #EDF8FF 28%, #F3FAFF 55%, #F9FCFF 80%, #FDFEFF 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
 
-        .content-section {
-            padding: 80px 0;
-            background: var(--silver-gradient-panel);
-        }
+.container { max-width: 1120px; margin: 0 auto; padding: 0 40px; }
 
-        .content-card {
-            background: var(--silver-tile);
-            padding: 48px;
-            border-radius: 16px;
-            border: 1px solid var(--silver-300);
-            box-shadow: var(--highlight-top), 0 1px 3px rgba(0, 0, 0, 0.03);
-            margin-bottom: 32px;
-        }
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  padding: 0 40px;
+  backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+  background: rgba(232,246,255,0.78);
+  border-bottom: 1px solid rgba(170,210,255,0.32);
+}
+.nav-inner {
+  max-width: 1120px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text-2); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--blue) !important; color: white !important;
+  padding: 8px 22px; border-radius: 100px;
+  font-weight: 700 !important; font-size: 14px !important;
+  box-shadow: 0 0 22px var(--glow), inset 0 1px 0 rgba(255,255,255,0.22);
+  transition: all 0.2s !important;
+}
+.nav-cta:hover {
+  box-shadow: 0 0 36px rgba(66,96,255,0.45), inset 0 1px 0 rgba(255,255,255,0.28) !important;
+  transform: translateY(-1px); color: white !important;
+}
 
-        .content-card h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 24px;
-        }
+/* PAGE HEADER */
+.page-header {
+  padding: 80px 0 72px;
+  text-align: center;
+  background: linear-gradient(180deg, #B8DFF5 0%, #CCE9FA 18%, #D8F0FF 40%, transparent 80%);
+  position: relative;
+}
+.page-header::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 60%;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(14,165,233,0.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-header h1 {
+  font-size: 52px; font-weight: 900; letter-spacing: -2px;
+  color: var(--text); margin-bottom: 14px; position: relative; z-index: 1;
+}
+.page-header p { font-size: 18px; color: var(--text-2); position: relative; z-index: 1; }
 
-        .content-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--navy);
-            margin-top: 24px;
-            margin-bottom: 12px;
-        }
+/* CONTENT */
+.content-section { padding: 72px 0 96px; }
 
-        .content-card p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
+.contact-card {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(190,220,255,0.5);
+  border-radius: 24px; padding: 56px;
+  box-shadow: 0 8px 40px rgba(66,96,255,0.08);
+  max-width: 640px; margin: 0 auto; text-align: center;
+}
+.contact-card h2 {
+  font-size: 28px; font-weight: 800; letter-spacing: -0.5px;
+  color: var(--text); margin-bottom: 14px;
+}
+.contact-card p { font-size: 17px; color: var(--text-2); line-height: 1.65; margin-bottom: 28px; }
+.contact-link {
+  display: inline-block;
+  background: linear-gradient(135deg, #4260FF 0%, #1E90FF 100%);
+  color: white; text-decoration: none;
+  padding: 13px 32px; border-radius: 100px;
+  font-size: 15px; font-weight: 700;
+  box-shadow: 0 0 24px rgba(66,96,255,0.28), inset 0 1px 0 rgba(255,255,255,0.22);
+  transition: all 0.2s;
+}
+.contact-link:hover {
+  box-shadow: 0 0 40px rgba(66,96,255,0.45), inset 0 1px 0 rgba(255,255,255,0.28);
+  transform: translateY(-1px);
+}
 
-        .content-card ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 16px;
-        }
-
-        .content-card li {
-            color: var(--text-secondary);
-            padding: 8px 0;
-            padding-left: 28px;
-            position: relative;
-        }
-
-        .content-card li:before {
-            content: "→";
-            color: var(--accent);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .contact-box {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 40px;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: var(--highlight-top-dark), 0 4px 16px rgba(0, 0, 0, 0.04);
-        }
-
-        .contact-box h3 {
-            font-size: 24px;
-            margin-bottom: 12px;
-        }
-
-        .contact-box p {
-            margin-bottom: 24px;
-            opacity: 0.9;
-        }
-
-        .contact-box a {
-            color: var(--white);
-            text-decoration: underline;
-            font-weight: 600;
-        }
-    </style>
+/* FOOTER */
+footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
+.foot { display: flex; justify-content: space-between; align-items: center; }
+.foot-brand { font-weight: 900; font-size: 18px; color: var(--text); }
+.foot-links { display: flex; gap: 28px; }
+.foot-links a { text-decoration: none; color: var(--text-3); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.foot-links a:hover { color: var(--text-2); }
+.foot-copy { margin-top: 20px; font-size: 12px; color: var(--text-3); text-align: center; }
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="index.html" class="logo">
-                    <span class="logo-text">Venturi</span>
-                </a>
-                <div class="nav-links">
-                    <a href="index.html#features">Features</a>
-                    <a href="support.html">Support</a>
-                    <a href="privacy.html">Privacy</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Page Header -->
-    <div class="page-header">
-        <div class="container">
-            <h1>Support</h1>
-            <p>Real help from people who understand aviation</p>
-        </div>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Venturi</a>
+    <ul class="nav-links">
+      <li><a href="index.html#coowners">Co-Owners</a></li>
+      <li><a href="index.html#preflight">Pre-Flight</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="index.html#signup" class="nav-cta">Get Early Access</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>Support</h1>
+    <p>Real help from people who understand aviation</p>
+  </div>
+</div>
+
+<section class="content-section">
+  <div class="container">
+    <div class="contact-card">
+      <h2>Have a question? Talk to us.</h2>
+      <p>Every message reaches our team directly. Whether you need help splitting costs across co-owners, organizing your records, or setting up a forecast, we are one email away.</p>
+      <a href="mailto:support@venturimx.co" class="contact-link">support@venturimx.co</a>
     </div>
+  </div>
+</section>
 
-    <!-- Content -->
-    <section class="content-section">
-        <div class="container">
-            <div class="contact-box">
-                <h3>Have a Question? Talk to Us.</h3>
-                <p>Every message reaches our team directly. Whether you need help splitting costs across co-owners, organizing your records, or setting up a forecast—we're one email away.</p>
-                <a href="mailto:support@venturimx.co">support@venturimx.co</a>
-            </div>
-        </div>
-    </section>
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div class="foot-brand">Venturi</div>
+      <div class="foot-links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="foot-copy">&copy; 2025 Venturi Aviation. All rights reserved.</div>
+  </div>
+</footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span>Venturi</span>
-                </div>
-                <div class="footer-links">
-                    <a href="support.html">Support</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Venturi Aviation. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
