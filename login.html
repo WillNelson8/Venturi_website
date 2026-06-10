@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In - Venturi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="forum.css">
+</head>
+<body data-page="login">
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Venturi</a>
+    <ul class="nav-links">
+      <li class="hide-m"><a href="index.html#features">Features</a></li>
+      <li><a href="forum.html">Community</a></li>
+      <li class="hide-m"><a href="support.html">Support</a></li>
+      <span id="navAuthSlot" style="display:contents"></span>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="auth-wrap">
+      <div class="auth-card glass">
+        <h1>Welcome to Venturi</h1>
+        <p class="auth-sub">One account for the app and the community. Sign in or create an account to post in the forum.</p>
+
+        <div class="auth-tabs">
+          <button id="tabSignin" class="active" type="button">Sign In</button>
+          <button id="tabSignup" type="button">Create Account</button>
+        </div>
+
+        <div id="panelSignin">
+          <form id="signinForm">
+            <div class="field">
+              <label for="signinEmail">Email</label>
+              <input type="email" id="signinEmail" autocomplete="email" placeholder="your@email.com" required>
+            </div>
+            <div class="field">
+              <label for="signinPassword">Password</label>
+              <input type="password" id="signinPassword" autocomplete="current-password" placeholder="Your password" required>
+            </div>
+            <button type="submit" class="btn-blue" id="signinSubmit" style="width:100%; justify-content:center;">Sign In</button>
+          </form>
+          <div class="auth-foot">
+            <button class="btn-text" id="forgotBtn" type="button">Forgot password?</button>
+          </div>
+        </div>
+
+        <div id="panelSignup" style="display:none">
+          <form id="signupForm">
+            <div class="field">
+              <label for="signupName">Name</label>
+              <input type="text" id="signupName" autocomplete="name" placeholder="How you will appear in the forum" required>
+            </div>
+            <div class="field">
+              <label for="signupEmail">Email</label>
+              <input type="email" id="signupEmail" autocomplete="email" placeholder="your@email.com" required>
+            </div>
+            <div class="field">
+              <label for="signupPassword">Password</label>
+              <input type="password" id="signupPassword" autocomplete="new-password" placeholder="At least 8 characters" required>
+            </div>
+            <button type="submit" class="btn-blue" id="signupSubmit" style="width:100%; justify-content:center;">Create Account</button>
+          </form>
+          <p class="auth-note">This creates a full Venturi account. Use the same email and password to sign in to the iOS app.</p>
+        </div>
+
+        <p class="form-msg" id="authMsg"></p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div class="foot-brand">Venturi</div>
+      <div class="foot-links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="forum.js"></script>
+</body>
+</html>

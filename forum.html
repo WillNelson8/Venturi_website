@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Venturi Community - where pilots and aircraft owners discuss the app, request features, and talk aviation.">
+<title>Community - Venturi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="forum.css">
+</head>
+<body data-page="forum">
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Venturi</a>
+    <ul class="nav-links">
+      <li class="hide-m"><a href="index.html#features">Features</a></li>
+      <li><a href="forum.html">Community</a></li>
+      <li class="hide-m"><a href="support.html">Support</a></li>
+      <span id="navAuthSlot" style="display:contents"></span>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="page-head">
+      <div class="lbl">Community</div>
+      <h1>The Venturi Hangar</h1>
+      <p>Talk with other pilots about what is working, what is not, and what Venturi should build next. Anyone can read; sign in with your Venturi account to post.</p>
+      <div style="margin-top:22px">
+        <button class="btn-blue" id="newThreadBtn">Start a Thread</button>
+      </div>
+    </div>
+
+    <div class="composer glass" id="composer" style="display:none">
+      <h2>New Thread</h2>
+      <form id="newThreadForm">
+        <div class="field">
+          <label for="newThreadCategory">Category</label>
+          <select id="newThreadCategory"></select>
+        </div>
+        <div class="field">
+          <label for="newThreadTitle">Title</label>
+          <input type="text" id="newThreadTitle" maxlength="200" placeholder="What do you want to discuss?">
+        </div>
+        <div class="field">
+          <label for="newThreadBody">Body</label>
+          <textarea id="newThreadBody" maxlength="20000" placeholder="Share your thoughts with the community..."></textarea>
+        </div>
+        <button type="submit" class="btn-blue" id="newThreadSubmit">Post Thread</button>
+        <p class="form-msg" id="composerMsg"></p>
+      </form>
+    </div>
+
+    <div class="cat-chips" id="catChips"></div>
+    <div class="thread-list" id="threadList">
+      <div class="empty">Loading threads...</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div class="foot-brand">Venturi</div>
+      <div class="foot-links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="forum.js"></script>
+</body>
+</html>

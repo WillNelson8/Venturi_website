@@ -119,6 +119,24 @@ To remove any texture, delete the corresponding `::before` block in `styles.css`
 
 ---
 
+## Community forum (added 2026-06-10)
+
+Public-read forum backed by the SAME Supabase project and auth as the iOS app.
+
+- `forum.html` — thread list + category chips + new-thread composer (auth-gated)
+- `thread.html?id=<uuid>` — thread view + replies; reply form requires sign-in
+- `login.html` — sign in / create account / password reset; accounts are full
+  Venturi app accounts (signUp passes `pilot_name` metadata; the backend
+  `handle_new_user` trigger creates the `profiles` row the app uses)
+- `forum.css` / `forum.js` — shared styles (glass theme) and logic for all three
+  pages; pages declare themselves via `<body data-page="forum|thread|login">`
+- Tables: `forum_categories`, `forum_threads`, `forum_posts` (RLS: world read,
+  authenticated write own). Migration lives in the app repo:
+  `~/Desktop/Venturi/Venturi/supabase/migrations/20260610_forum.sql`
+- `index.html` nav has a "Community" link and an auth-aware "Log In" link that
+  swaps to the pilot's name by reading the Supabase session from localStorage
+- Render user content with textContent only (XSS); never innerHTML
+
 ## Email signup (Supabase)
 
 Handled by `signup.js`. The form IDs it expects:

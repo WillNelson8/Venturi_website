@@ -295,9 +295,10 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
     <a href="index.html" class="logo">Venturi</a>
     <ul class="nav-links">
       <li><a href="#coowners">Co-Owners</a></li>
-      <li><a href="#preflight">Pre-Flight</a></li>
       <li><a href="#features">Features</a></li>
+      <li><a href="forum.html">Community</a></li>
       <li><a href="support.html">Support</a></li>
+      <li><a href="login.html" id="navAuthLink">Log In</a></li>
       <li><a href="#signup" class="nav-cta">Get Early Access</a></li>
     </ul>
   </div>
@@ -539,6 +540,25 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
 </footer>
 
 <script src="signup.js"></script>
+<script>
+  // If a Supabase session exists (set by login.html / forum pages), swap the
+  // nav "Log In" link for the pilot's name linking to the community. Reads
+  // localStorage directly so the homepage never loads the Supabase SDK.
+  (function () {
+    try {
+      var raw = localStorage.getItem('sb-crkeiitgmglbcbbyncme-auth-token');
+      if (!raw) return;
+      var s = JSON.parse(raw);
+      if (!s || !s.user || (s.expires_at && s.expires_at * 1000 < Date.now())) return;
+      var name = (s.user.user_metadata && s.user.user_metadata.pilot_name || '').trim()
+        || (s.user.email || '').split('@')[0];
+      if (!name) return;
+      var link = document.getElementById('navAuthLink');
+      link.textContent = name;
+      link.href = 'forum.html';
+    } catch (e) { /* stay as Log In */ }
+  })();
+</script>
 <script>
   document.getElementById('heroSignupForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
