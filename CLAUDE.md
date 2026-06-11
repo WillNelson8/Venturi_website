@@ -6,7 +6,11 @@ Full context for editing this site in future sessions. Read this before making a
 
 Static HTML/CSS marketing site for **Venturi** — an iPad app for aircraft cost management (co-ownership splits, maintenance records, logbook, forecasting). The site is pre-launch, so the primary conversion goal is **email signup for early access**, not App Store downloads.
 
-Hosted on GitHub Pages at `https://willnelson8.github.io/Venturi_website/` (or custom domain if configured).
+Hosted on **Vercel** at `https://www.venturimx.co` (apex venturimx.co 307-redirects to www). The GitHub repo is the source; Vercel deploys on push to `main`. There is no GitHub Pages deployment and no CNAME file needed.
+
+**Theme note (2026-06):** the site uses the LIGHT GLASS theme (white/blue glassmorphism, Electric Blue #4260FF) with all styles INLINE in each page's `<style>` block. The dark navy/amber design system described in older notes is retired and `styles.css` has been deleted. Each page (index, support, privacy, terms) carries its own inline copy of the shared nav/footer/theme styles; forum pages share `forum.css`.
+
+**Motion (2026-06):** index.html has a scroll-driven flight path animation (dotted route + plane SVG built by inline JS at the bottom of the page, anchored to section ids `#coowners`, `#settleup`, `#preflight`, `#features`, `#fuel`, `#maintenance`, `#signup`) and stat counters that count up on first view. Both are disabled under 880px and for prefers-reduced-motion. If you rename section ids, update the STOPS list in the flight script.
 
 ---
 
@@ -163,16 +167,11 @@ Three things to update in `index.html`:
 
 ## Deployment
 
-Site deploys via **GitHub Pages** from the `main` branch.
+Site deploys via **Vercel** from the `main` branch.
 
 - Repo: `https://github.com/WillNelson8/Venturi_website`
 - To deploy: `git add . && git commit -m "message" && git push origin main`
-- GitHub Pages picks up the push automatically within ~60 seconds
-
-To enable GitHub Pages (if not yet configured):
-1. Go to repo Settings → Pages
-2. Source: Deploy from branch → `main` → `/ (root)`
-3. Save
+- Vercel picks up the push automatically; live at https://www.venturimx.co
 
 ---
 

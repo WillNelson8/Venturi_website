@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Venturi - Aircraft cost management for co-owners and private pilots. Split costs, organize records, and forecast expenses with precision.">
 <title>Venturi - Aircraft Ownership, Organized</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="canonical" href="https://www.venturimx.co/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Venturi">
+<meta property="og:title" content="Venturi - Aircraft Ownership, Organized">
+<meta property="og:description" content="Split costs between co-owners, track every maintenance item, and forecast expenses with precision. Built for private pilots.">
+<meta property="og:url" content="https://www.venturimx.co/">
+<meta property="og:image" content="https://www.venturimx.co/assets/screen-analytics.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Venturi - Aircraft Ownership, Organized">
+<meta name="twitter:description" content="Split costs between co-owners, track every maintenance item, and forecast expenses with precision. Built for private pilots.">
+<meta name="twitter:image" content="https://www.venturimx.co/assets/screen-analytics.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -278,6 +291,62 @@ h2 { font-size: 44px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1
 .perk-dot { width: 6px; height: 6px; background: var(--blue); border-radius: 50%; }
 #signupMessage { margin-top: 12px; font-size: 14px; color: var(--blue); position: relative; z-index: 1; }
 
+/* Flight path scroll animation */
+#flightLine, #flightPlane {
+  position: absolute; left: 0; pointer-events: none; overflow: visible;
+}
+#flightLine { z-index: 0; }
+#flightPlane { z-index: 0; }
+#flightPlane .plane-body {
+  fill: #A9C4FA;
+  filter: drop-shadow(0 3px 6px rgba(66,96,255,0.22));
+}
+@media (max-width: 880px) {
+  #flightLine, #flightPlane { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #flightLine, #flightPlane { display: none; }
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .container { padding: 0 24px; }
+  nav { padding: 0 20px; }
+  .nav-links { gap: 16px; }
+  .nav-links li:nth-child(-n+4) { display: none; }
+  .hero { padding-top: 64px; }
+  .hero h1 { font-size: 44px; letter-spacing: -1.8px; }
+  .hero-sub { font-size: 17px; }
+  .hero-screens { margin-top: 48px; }
+  .ipad-frame.side-l, .ipad-frame.side-r { display: none; }
+  .stats { padding: 40px 0; }
+  .stats-glass { flex-wrap: wrap; gap: 28px 44px; padding: 32px 28px; }
+  .stat-n { font-size: 36px; }
+  section { padding: 64px 0; }
+  h2 { font-size: 32px; letter-spacing: -1px; }
+  .tc { grid-template-columns: 1fr; gap: 44px; }
+  .tc.flip .vis { order: 0; }
+  .tc .col h2 { font-size: 30px; }
+  .two-up { grid-template-columns: 1fr; gap: 44px; margin-top: 44px; }
+  .feat-grid { grid-template-columns: 1fr 1fr; margin-top: 40px; }
+  .fbadge.tr { top: -14px; right: 6px; }
+  .fbadge.bl { bottom: -10px; left: 6px; }
+  .signup-box { padding: 52px 28px; }
+  .signup-box h2 { font-size: 32px; }
+  .perks { flex-wrap: wrap; gap: 10px 22px; }
+  .foot { flex-direction: column; gap: 16px; }
+}
+@media (max-width: 560px) {
+  .hero h1 { font-size: 34px; letter-spacing: -1.2px; }
+  .hero-form { display: flex; width: 100%; }
+  .hero-form input { width: auto; flex: 1; min-width: 0; }
+  .ipad-frame img { width: 100%; }
+  .hero-screens .ipad-frame { width: 100%; }
+  .feat-grid { grid-template-columns: 1fr; }
+  .signup-form { padding-left: 16px; }
+  .signup-form .btn-blue { padding: 11px 16px; }
+}
+
 /* Footer */
 footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
 .foot { display: flex; justify-content: space-between; align-items: center; }
@@ -311,19 +380,19 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
     <h1>Aircraft Ownership,<br><em>Organized.</em></h1>
     <p class="hero-sub">Split costs between co-owners, track every maintenance item, and forecast expenses with precision. Built for private pilots who run their aircraft like a business.</p>
     <form class="hero-form" id="heroSignupForm">
-      <input type="email" id="heroEmail" placeholder="your@email.com" autocomplete="email">
+      <input type="email" id="heroEmail" placeholder="your@email.com" autocomplete="email" aria-label="Email address" required>
       <button type="submit" class="btn-blue">Get Early Access</button>
     </form>
     <p class="hero-note">Available for iPad &middot; iOS 17.0+ &middot; Launching soon</p>
     <div class="hero-screens">
       <div class="ipad-frame side-l">
-        <img src="assets/screen-preflight.png" alt="Venturi pre-flight checklist">
+        <img src="assets/screen-preflight.webp" width="1640" height="2360" alt="Venturi pre-flight checklist">
       </div>
       <div class="ipad-frame">
-        <img src="assets/screen-analytics.png" alt="Venturi analytics overview">
+        <img src="assets/screen-analytics.webp" width="1640" height="2360" alt="Venturi analytics overview">
       </div>
       <div class="ipad-frame side-r">
-        <img src="assets/screen-ownership.png" alt="Venturi ownership costs">
+        <img src="assets/screen-ownership.webp" width="1640" height="2360" alt="Venturi ownership costs">
       </div>
     </div>
   </div>
@@ -357,7 +426,7 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
       </div>
       <div class="vis">
         <div class="ipad-frame">
-          <img src="assets/screen-invite.png" alt="Invite co-owner screen">
+          <img src="assets/screen-invite.webp" width="1640" height="2360" loading="lazy" alt="Invite co-owner screen">
         </div>
         <div class="fbadge tr"><span class="fdot" style="background:#22C55E;"></span>Invite sent<div class="fs">co-pilot@example.com</div></div>
         <div class="fbadge bl"><span class="fdot" style="background:#4260FF;"></span>Co-owner connected<div class="fs">Add all your co-owners</div></div>
@@ -367,7 +436,7 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
 </section>
 
 <!-- SETTLE UP -->
-<section>
+<section id="settleup">
   <div class="container">
     <div class="tc flip">
       <div class="col">
@@ -382,7 +451,7 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
       </div>
       <div class="vis">
         <div class="ipad-frame">
-          <img src="assets/screen-ownership.png" alt="Ownership costs and reimbursements">
+          <img src="assets/screen-ownership.webp" width="1640" height="2360" loading="lazy" alt="Ownership costs and reimbursements">
         </div>
         <div class="fbadge tr"><span class="fdot" style="background:#4260FF;"></span>$1,106.30 total<div class="fs">Split across 4 pilots</div></div>
         <div class="fbadge bl"><span class="fdot" style="background:#F59E0B;"></span>3 transfers pending<div class="fs">Reimbursements auto-calculated</div></div>
@@ -400,13 +469,13 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
     <div class="two-up">
       <div class="vis">
         <div class="ipad-frame">
-          <img src="assets/screen-preflight.png" alt="Ready to fly screen">
+          <img src="assets/screen-preflight.webp" width="1640" height="2360" loading="lazy" alt="Ready to fly screen">
         </div>
         <div class="fbadge tr"><span class="fdot" style="background:#22C55E;"></span>Ready to fly<div class="fs">All 30 checks passed</div></div>
       </div>
       <div class="vis">
         <div class="ipad-frame">
-          <img src="assets/screen-preflight-detail.png" alt="Pre-flight detail and start flight">
+          <img src="assets/screen-preflight-detail.webp" width="1640" height="2360" loading="lazy" alt="Pre-flight detail and start flight">
         </div>
         <div class="fbadge bl"><span class="fdot" style="background:#4260FF;"></span>Start Flight and Log<div class="fs">One tap to begin recording</div></div>
       </div>
@@ -456,7 +525,7 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
 </section>
 
 <!-- FUEL ANALYTICS -->
-<section>
+<section id="fuel">
   <div class="container">
     <div class="tc">
       <div class="col">
@@ -471,7 +540,7 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
       </div>
       <div class="vis">
         <div class="ipad-frame">
-          <img src="assets/screen-fuel.png" alt="Fuel analysis chart">
+          <img src="assets/screen-fuel.webp" width="1640" height="2360" loading="lazy" alt="Fuel analysis chart">
         </div>
         <div class="fbadge tr"><span class="fdot" style="background:#0EA5E9;"></span>1.7 gal/hr average<div class="fs">140 gal total tracked</div></div>
       </div>
@@ -480,7 +549,7 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
 </section>
 
 <!-- MAINTENANCE -->
-<section>
+<section id="maintenance">
   <div class="container">
     <div class="tc flip">
       <div class="col">
@@ -496,7 +565,7 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
       </div>
       <div class="vis">
         <div class="ipad-frame">
-          <img src="assets/screen-maintenance.png" alt="Add maintenance item">
+          <img src="assets/screen-maintenance.webp" width="1640" height="2360" loading="lazy" alt="Add maintenance item">
         </div>
         <div class="fbadge tr"><span class="fdot" style="background:#22C55E;"></span>4 items tracked<div class="fs">All maintenance in one place</div></div>
       </div>
@@ -512,7 +581,7 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
       <h2>Be the first to fly <em>Venturi.</em></h2>
       <p>Drop your email and we will send you early access before Venturi opens to the public. No spam, just one email when it is ready.</p>
       <form class="signup-form" id="signupForm">
-        <input type="email" id="signupEmail" placeholder="your@email.com" autocomplete="email">
+        <input type="email" id="signupEmail" placeholder="your@email.com" autocomplete="email" aria-label="Email address" required>
         <button type="submit" id="signupSubmit" class="btn-blue">Get Early Access</button>
       </form>
       <p id="signupMessage"></p>
@@ -535,10 +604,193 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
         <a href="terms.html">Terms of Service</a>
       </div>
     </div>
-    <div class="foot-copy">&copy; 2025 Venturi Aviation. All rights reserved.</div>
+    <div class="foot-copy">&copy; 2026 Venturi Aviation. All rights reserved.</div>
   </div>
 </footer>
 
+<script>
+  // Scroll-driven flight path: a dotted route weaving past each feature
+  // section with a small plane that follows it. The line sits behind the
+  // content (z-index 0); the plane flies above it. Dots already flown over
+  // brighten via a masked overlay path. Disabled under 880px and for
+  // prefers-reduced-motion (CSS hides the layers; JS also skips work).
+  (function () {
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var SVGNS = 'http://www.w3.org/2000/svg';
+
+    // Waypoints: section id (or element) + horizontal position as a fraction
+    // of the container width, alternating toward whichever side holds the
+    // screenshot so the route "visits" each feature.
+    var STOPS = [
+      { el: '.stats',       x: 0.50, at: 'bottom' },
+      { el: '#coowners',    x: 0.78, at: 'center' },
+      { el: '#settleup',    x: 0.22, at: 'center' },
+      { el: '#preflight',   x: 0.50, at: 'center' },
+      { el: '#features',    x: 0.50, at: 'center' },
+      { el: '#fuel',        x: 0.78, at: 'center' },
+      { el: '#maintenance', x: 0.22, at: 'center' },
+      { el: '#signup',      x: 0.50, at: 'top' }
+    ];
+
+    function makeSvg(id) {
+      var s = document.createElementNS(SVGNS, 'svg');
+      s.setAttribute('id', id);
+      s.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(s);
+      return s;
+    }
+
+    var lineSvg = makeSvg('flightLine');
+    var planeSvg = makeSvg('flightPlane');
+
+    lineSvg.innerHTML =
+      '<defs><mask id="fpMask">' +
+      '<path id="fpMaskPath" fill="none" stroke="#fff" stroke-width="8"/>' +
+      '</mask></defs>' +
+      '<path id="fpBase" fill="none" stroke="rgba(66,96,255,0.22)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0.5 11"/>' +
+      '<path id="fpDone" fill="none" stroke="rgba(66,96,255,0.55)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0.5 11" mask="url(#fpMask)"/>';
+
+    planeSvg.innerHTML =
+      '<g id="fpPlaneG">' +
+      '<path class="plane-body" d="M14 0 L10 -1.7 L4 -1.7 L0.5 -10 L-2.5 -10 L-1 -1.7 L-7 -1.3 L-9 -5.5 L-11 -5.5 L-10 -0.9 L-10 0.9 L-11 5.5 L-9 5.5 L-7 1.3 L-1 1.7 L-2.5 10 L0.5 10 L4 1.7 L10 1.7 Z"/>' +
+      '</g>';
+
+    var basePath = lineSvg.querySelector('#fpBase');
+    var donePath = lineSvg.querySelector('#fpDone');
+    var maskPath = lineSvg.querySelector('#fpMaskPath');
+    var planeG = planeSvg.querySelector('#fpPlaneG');
+
+    var pathTopAbs = 0, totalLen = 0, built = false;
+    var currentLen = 0, targetLen = 0, rafId = null;
+
+    function anchorY(el, at) {
+      var r = el.getBoundingClientRect();
+      var top = r.top + window.scrollY;
+      if (at === 'bottom') return top + r.height;
+      if (at === 'top') return top + 70;
+      return top + r.height / 2;
+    }
+
+    function build() {
+      if (window.innerWidth <= 880 || reduced.matches) { built = false; return; }
+      var container = document.querySelector('.hero .container');
+      if (!container) return;
+      var cr = container.getBoundingClientRect();
+      var cLeft = cr.left + window.scrollX + 40;   // inside the 40px padding
+      var cWidth = cr.width - 80;
+
+      var pts = [];
+      for (var i = 0; i < STOPS.length; i++) {
+        var el = document.querySelector(STOPS[i].el);
+        if (!el) return;
+        pts.push({ x: cLeft + STOPS[i].x * cWidth, y: anchorY(el, STOPS[i].at) });
+      }
+
+      pathTopAbs = pts[0].y;
+      var h = pts[pts.length - 1].y - pathTopAbs;
+      [lineSvg, planeSvg].forEach(function (s) {
+        s.setAttribute('width', document.documentElement.clientWidth);
+        s.setAttribute('height', h);
+        s.style.top = pathTopAbs + 'px';
+        s.style.width = document.documentElement.clientWidth + 'px';
+        s.style.height = h + 'px';
+      });
+
+      var d = 'M ' + pts[0].x + ' 0';
+      for (var j = 1; j < pts.length; j++) {
+        var p0 = pts[j - 1], p1 = pts[j];
+        var y0 = p0.y - pathTopAbs, y1 = p1.y - pathTopAbs;
+        var k = (y1 - y0) * 0.5;
+        d += ' C ' + p0.x + ' ' + (y0 + k) + ', ' + p1.x + ' ' + (y1 - k) + ', ' + p1.x + ' ' + y1;
+      }
+      basePath.setAttribute('d', d);
+      donePath.setAttribute('d', d);
+      maskPath.setAttribute('d', d);
+
+      totalLen = basePath.getTotalLength();
+      maskPath.style.strokeDasharray = totalLen;
+      maskPath.style.strokeDashoffset = totalLen;
+      built = true;
+      onScroll();
+      currentLen = targetLen;   // no fly-in on load/resize
+      render(currentLen);
+    }
+
+    function onScroll() {
+      if (!built) return;
+      var probe = window.scrollY + window.innerHeight * 0.45 - pathTopAbs;
+      var range = parseFloat(lineSvg.getAttribute('height'));
+      var p = Math.max(0, Math.min(1, probe / range));
+      targetLen = p * totalLen;
+      if (rafId === null) rafId = requestAnimationFrame(tick);
+    }
+
+    function tick() {
+      currentLen += (targetLen - currentLen) * 0.4;
+      if (Math.abs(targetLen - currentLen) < 0.3) {
+        currentLen = targetLen;
+        rafId = null;
+      } else {
+        rafId = requestAnimationFrame(tick);
+      }
+      render(currentLen);
+    }
+
+    function render(len) {
+      if (!built || totalLen === 0) return;
+      var pt = basePath.getPointAtLength(len);
+      var ahead = basePath.getPointAtLength(Math.min(totalLen, len + 2));
+      var angle = Math.atan2(ahead.y - pt.y, ahead.x - pt.x) * 180 / Math.PI;
+      planeG.setAttribute('transform',
+        'translate(' + pt.x + ' ' + pt.y + ') rotate(' + angle + ') scale(2.8)');
+      maskPath.style.strokeDashoffset = Math.max(0, totalLen - len);
+    }
+
+    var resizeT;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeT);
+      resizeT = setTimeout(build, 150);
+    });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', build);
+    build();
+  })();
+</script>
+<script>
+  // Stat counters: count up once when the stats bar scrolls into view.
+  // Only the leading number animates; the <sup> suffix is untouched.
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var bar = document.querySelector('.stats-glass');
+    if (!bar || !('IntersectionObserver' in window)) return;
+
+    function animate(node, target) {
+      var DUR = 1100, start = null;
+      function step(ts) {
+        if (start === null) start = ts;
+        var t = Math.min(1, (ts - start) / DUR);
+        var eased = 1 - Math.pow(1 - t, 3);
+        node.nodeValue = String(Math.round(target * eased));
+        if (t < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect();
+      bar.querySelectorAll('.stat-n').forEach(function (el) {
+        var node = el.firstChild;
+        if (!node || node.nodeType !== 3) return;
+        var target = parseInt(node.nodeValue, 10);
+        if (isNaN(target)) return;
+        node.nodeValue = '0';
+        animate(node, target);
+      });
+    }, { threshold: 0.4 });
+    io.observe(bar);
+  })();
+</script>
 <script src="signup.js"></script>
 <script>
   // If a Supabase session exists (set by login.html / forum pages), swap the

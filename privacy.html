@@ -1,229 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Venturi</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .page-header {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 80px 0 60px;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - Venturi</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        .page-header h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
+:root {
+  --blue:   #4260FF;
+  --sky:    #0EA5E9;
+  --glow:   rgba(66,96,255,0.26);
+  --text:   #0C1628;
+  --text-2: #374060;
+  --text-3: #8994B8;
+}
 
-        .page-header p {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.9);
-        }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #D8EDFF 0%, #E4F3FF 10%, #EDF8FF 28%, #F3FAFF 55%, #F9FCFF 80%, #FDFEFF 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
 
-        .content-section {
-            padding: 80px 0;
-            background: var(--silver-gradient-panel);
-        }
+.container { max-width: 1120px; margin: 0 auto; padding: 0 40px; }
 
-        .content-card {
-            background: var(--silver-tile);
-            padding: 48px;
-            border-radius: 16px;
-            border: 1px solid var(--silver-300);
-            box-shadow: var(--highlight-top), 0 1px 3px rgba(0, 0, 0, 0.03);
-            max-width: 900px;
-            margin: 0 auto;
-        }
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  padding: 0 40px;
+  backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+  background: rgba(232,246,255,0.78);
+  border-bottom: 1px solid rgba(170,210,255,0.32);
+}
+.nav-inner {
+  max-width: 1120px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text-2); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--blue) !important; color: white !important;
+  padding: 8px 22px; border-radius: 100px;
+  font-weight: 700 !important; font-size: 14px !important;
+  box-shadow: 0 0 22px var(--glow), inset 0 1px 0 rgba(255,255,255,0.22);
+  transition: all 0.2s !important;
+}
+.nav-cta:hover {
+  box-shadow: 0 0 36px rgba(66,96,255,0.45), inset 0 1px 0 rgba(255,255,255,0.28) !important;
+  transform: translateY(-1px); color: white !important;
+}
 
-        .content-card h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--navy);
-            margin-top: 40px;
-            margin-bottom: 16px;
-        }
+/* PAGE HEADER */
+.page-header {
+  padding: 80px 0 72px;
+  text-align: center;
+  background: linear-gradient(180deg, #B8DFF5 0%, #CCE9FA 18%, #D8F0FF 40%, transparent 80%);
+  position: relative;
+}
+.page-header::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 60%;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(14,165,233,0.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+.page-header h1 {
+  font-size: 52px; font-weight: 900; letter-spacing: -2px;
+  color: var(--text); margin-bottom: 14px; position: relative; z-index: 1;
+}
+.page-header p { font-size: 18px; color: var(--text-2); position: relative; z-index: 1; }
 
-        .content-card h2:first-child {
-            margin-top: 0;
-        }
+/* CONTENT */
+.content-section { padding: 64px 0 96px; }
+.content-card {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(190,220,255,0.5);
+  border-radius: 24px; padding: 56px;
+  box-shadow: 0 8px 40px rgba(66,96,255,0.08);
+  max-width: 860px; margin: 0 auto;
+}
+.content-card h2 {
+  font-size: 24px; font-weight: 800; letter-spacing: -0.5px;
+  color: var(--text); margin-top: 40px; margin-bottom: 14px;
+}
+.content-card h2:first-of-type { margin-top: 0; }
+.content-card p { font-size: 16px; color: var(--text-2); line-height: 1.75; margin-bottom: 16px; }
+.content-card ul { list-style: none; padding: 0; margin-bottom: 16px; }
+.content-card li {
+  font-size: 16px; color: var(--text-2); line-height: 1.6;
+  padding: 7px 0 7px 24px; position: relative;
+}
+.content-card li::before {
+  content: ''; position: absolute; left: 4px; top: 16px;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--blue); box-shadow: 0 0 8px var(--glow);
+}
+.content-card strong { color: var(--text); font-weight: 600; }
+.highlight-box {
+  background: linear-gradient(135deg, rgba(66,96,255,0.07), rgba(14,165,233,0.05));
+  border: 1px solid rgba(66,96,255,0.18);
+  border-radius: 16px; padding: 22px 26px; margin: 24px 0;
+}
+.highlight-box p { color: var(--text); margin-bottom: 0; }
+.last-updated { color: var(--text-3); font-size: 14px; font-style: italic; margin-bottom: 28px; }
 
-        .content-card p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
+/* FOOTER */
+footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
+.foot { display: flex; justify-content: space-between; align-items: center; }
+.foot-brand { font-weight: 900; font-size: 18px; color: var(--text); }
+.foot-links { display: flex; gap: 28px; }
+.foot-links a { text-decoration: none; color: var(--text-3); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.foot-links a:hover { color: var(--text-2); }
+.foot-copy { margin-top: 20px; font-size: 12px; color: var(--text-3); text-align: center; }
 
-        .content-card ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 16px;
-        }
-
-        .content-card li {
-            color: var(--text-secondary);
-            padding: 8px 0;
-            padding-left: 28px;
-            position: relative;
-        }
-
-        .content-card li:before {
-            content: "→";
-            color: var(--accent);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .highlight-box {
-            background: var(--silver-tile);
-            border-left: 3px solid var(--accent);
-            border-top: 1px solid var(--silver-300);
-            border-right: 1px solid var(--silver-300);
-            border-bottom: 1px solid var(--silver-300);
-            padding: 24px;
-            border-radius: 8px;
-            margin: 24px 0;
-            box-shadow: var(--highlight-top), 0 1px 3px rgba(0, 0, 0, 0.03);
-        }
-
-        .highlight-box p {
-            color: var(--navy);
-            margin-bottom: 0;
-        }
-
-        .last-updated {
-            color: var(--text-secondary);
-            font-size: 14px;
-            font-style: italic;
-            margin-bottom: 32px;
-        }
-    </style>
+@media (max-width: 880px) {
+  .container { padding: 0 24px; }
+  nav { padding: 0 20px; }
+  .nav-links { gap: 16px; }
+  .nav-links li:nth-child(-n+3) { display: none; }
+  .page-header h1 { font-size: 38px; }
+  .content-card { padding: 32px 24px; }
+  .foot { flex-direction: column; gap: 16px; }
+}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <a href="index.html" class="logo">
-                    <span class="logo-text">Venturi</span>
-                </a>
-                <div class="nav-links">
-                    <a href="index.html#features">Features</a>
-                    <a href="support.html">Support</a>
-                    <a href="privacy.html">Privacy</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Page Header -->
-    <div class="page-header">
-        <div class="container">
-            <h1>Privacy Policy</h1>
-            <p>Security and discretion, built into every layer</p>
-        </div>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Venturi</a>
+    <ul class="nav-links">
+      <li><a href="index.html#coowners">Co-Owners</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="index.html#signup" class="nav-cta">Get Early Access</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p>Security and discretion, built into every layer</p>
+  </div>
+</div>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-card">
+      <p class="last-updated">Last Updated: January 9, 2025</p>
+
+      <div class="highlight-box">
+        <p><strong>In Short:</strong> Venturi protects every record you trust to us with top-of-the-line security and a strict privacy-by-design approach. Industry-grade encryption, audited infrastructure, and tight access controls safeguard your data at every layer.</p>
+      </div>
+
+      <h2>1. Introduction</h2>
+      <p>Venturi ("we," "our," or "the app") provides aircraft cost management, record-keeping, and forecasting tools for private pilots and aircraft co-owners. This Privacy Policy explains what information we handle, how we protect it, and the control you retain over your data.</p>
+
+      <h2>2. Information We Handle</h2>
+      <p>To deliver Venturi's core features, including cost splits, record organization, financial analysis, and forecasting, we process the information you choose to enter, which may include:</p>
+      <ul>
+        <li>Aircraft details (tail numbers, make, model, ownership structure)</li>
+        <li>Flight, fuel, and maintenance records you log</li>
+        <li>Financial figures (hourly rates, reserves, invoices, contributions)</li>
+        <li>Account information (name, email) used to access your records securely</li>
+        <li>Documents you upload (receipts, invoices, inspection records)</li>
+      </ul>
+      <p>You decide what to enter. Venturi does not collect ambient device data, location, contacts, or browsing history.</p>
+
+      <h2>3. How Your Data is Protected</h2>
+      <p>Your information is safeguarded through multiple, independently verified layers:</p>
+      <ul>
+        <li><strong>Encryption in transit:</strong> All traffic is protected by TLS 1.3</li>
+        <li><strong>Encryption at rest:</strong> Records are stored with AES-256 encryption</li>
+        <li><strong>Access control:</strong> Strict role-based access internally and biometric protection on-device</li>
+        <li><strong>Audited infrastructure:</strong> Hosted on providers with SOC 2 Type II certification</li>
+        <li><strong>Continuous monitoring:</strong> Anomaly detection and ongoing security review</li>
+      </ul>
+
+      <h2>4. Privacy by Design</h2>
+      <p>Venturi is built for owners who value discretion. We never sell your information, never use your records to train external models, and never share data with advertisers. The records you enter exist solely to serve you and the co-owners you explicitly invite into your account.</p>
+
+      <h2>5. Third-Party Services</h2>
+      <p><strong>FAA Aircraft Registry:</strong> If you look up an aircraft by tail number, Venturi queries the public FAA Aircraft Registry to retrieve registration details. We do not retain a log of these lookups beyond what is necessary to populate your record.</p>
+      <p><strong>Infrastructure providers:</strong> We host the app and store your encrypted records on vetted, security-certified cloud infrastructure providers who are contractually bound to handle data with the same standards we apply.</p>
+
+      <h2>6. Data Exports</h2>
+      <p>Your data remains yours. Venturi lets you export any record, log, or financial summary to CSV or PDF on demand. Exports are generated and delivered through secure, encrypted channels.</p>
+
+      <h2>7. Children's Privacy</h2>
+      <p>Venturi is intended for licensed pilots and aircraft owners and is not designed for anyone under the age of 18.</p>
+
+      <h2>8. Security Practices</h2>
+      <p>The security of your data is enforced through multiple layers, both on your device and in our infrastructure:</p>
+      <ul>
+        <li>Device-level protection via passcode, Face ID, or Touch ID</li>
+        <li>End-to-end encryption for data in transit and at rest</li>
+        <li>Audited cloud infrastructure with SOC 2 Type II certification</li>
+        <li>Continuous security monitoring and anomaly detection</li>
+      </ul>
+      <p>We recommend keeping your device locked and secured at all times.</p>
+
+      <h2>9. Your Rights</h2>
+      <p>You retain full control over the information in your account at all times:</p>
+      <ul>
+        <li>Access, edit, or remove any record at any time</li>
+        <li>Export your complete dataset in a portable format</li>
+        <li>Permanently delete your account and the associated data</li>
+        <li>Request a written copy of our security practices on demand</li>
+      </ul>
+
+      <h2>10. Changes to This Policy</h2>
+      <p>If we materially update how we handle data, we will revise this Privacy Policy and notify account holders in advance. The "Last Updated" date at the top of this page always reflects the current version.</p>
+
+      <h2>11. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy or how Venturi protects your data, please reach out:</p>
+      <p><strong>Email:</strong> support@venturimx.co</p>
+
+      <h2>12. Consent</h2>
+      <p>By using Venturi, you consent to the practices described in this Privacy Policy. We hold ourselves to a standard we would expect from any service trusted with our own aircraft records.</p>
     </div>
+  </div>
+</section>
 
-    <!-- Content -->
-    <section class="content-section">
-        <div class="container">
-            <div class="content-card">
-                <p class="last-updated">Last Updated: January 9, 2025</p>
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div class="foot-brand">Venturi</div>
+      <div class="foot-links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="foot-copy">&copy; 2026 Venturi Aviation. All rights reserved.</div>
+  </div>
+</footer>
 
-                <div class="highlight-box">
-                    <p><strong>In Short:</strong> Venturi protects every record you trust to us with top-of-the-line security and a strict privacy-by-design approach. Industry-grade encryption, audited infrastructure, and tight access controls safeguard your data at every layer.</p>
-                </div>
-
-                <h2>1. Introduction</h2>
-                <p>Venturi ("we," "our," or "the app") provides aircraft cost management, record-keeping, and forecasting tools for private pilots and aircraft co-owners. This Privacy Policy explains what information we handle, how we protect it, and the control you retain over your data.</p>
-
-                <h2>2. Information We Handle</h2>
-                <p>To deliver Venturi's core features—cost splits, record organization, financial analysis, and forecasting—we process the information you choose to enter, which may include:</p>
-                <ul>
-                    <li>Aircraft details (tail numbers, make, model, ownership structure)</li>
-                    <li>Flight, fuel, and maintenance records you log</li>
-                    <li>Financial figures (hourly rates, reserves, invoices, contributions)</li>
-                    <li>Account information (name, email) used to access your records securely</li>
-                    <li>Documents you upload (receipts, invoices, inspection records)</li>
-                </ul>
-                <p>You decide what to enter. Venturi does not collect ambient device data, location, contacts, or browsing history.</p>
-
-                <h2>3. How Your Data is Protected</h2>
-                <p>Your information is safeguarded through multiple, independently verified layers:</p>
-                <ul>
-                    <li><strong>Encryption in transit:</strong> All traffic is protected by TLS 1.3</li>
-                    <li><strong>Encryption at rest:</strong> Records are stored with AES-256 encryption</li>
-                    <li><strong>Access control:</strong> Strict role-based access internally and biometric protection on-device</li>
-                    <li><strong>Audited infrastructure:</strong> Hosted on providers with SOC 2 Type II certification</li>
-                    <li><strong>Continuous monitoring:</strong> Anomaly detection and ongoing security review</li>
-                </ul>
-
-                <h2>4. Privacy by Design</h2>
-                <p>Venturi is built for owners who value discretion. We never sell your information, never use your records to train external models, and never share data with advertisers. The records you enter exist solely to serve you and the co-owners you explicitly invite into your account.</p>
-
-                <h2>5. Third-Party Services</h2>
-                <p><strong>FAA Aircraft Registry:</strong> If you look up an aircraft by tail number, Venturi queries the public FAA Aircraft Registry to retrieve registration details. We do not retain a log of these lookups beyond what is necessary to populate your record.</p>
-                <p><strong>Infrastructure providers:</strong> We host the app and store your encrypted records on vetted, security-certified cloud infrastructure providers who are contractually bound to handle data with the same standards we apply.</p>
-
-                <h2>6. Data Exports</h2>
-                <p>Your data remains yours. Venturi lets you export any record, log, or financial summary to CSV or PDF on demand. Exports are generated and delivered through secure, encrypted channels.</p>
-
-                <h2>7. Children's Privacy</h2>
-                <p>Venturi is intended for licensed pilots and aircraft owners and is not designed for anyone under the age of 18.</p>
-
-                <h2>8. Security Practices</h2>
-                <p>The security of your data is enforced through multiple layers, both on your device and in our infrastructure:</p>
-                <ul>
-                    <li>Device-level protection via passcode, Face ID, or Touch ID</li>
-                    <li>End-to-end encryption for data in transit and at rest</li>
-                    <li>Audited cloud infrastructure with SOC 2 Type II certification</li>
-                    <li>Continuous security monitoring and anomaly detection</li>
-                </ul>
-                <p>We recommend keeping your device locked and secured at all times.</p>
-
-                <h2>9. Your Rights</h2>
-                <p>You retain full control over the information in your account at all times:</p>
-                <ul>
-                    <li>Access, edit, or remove any record at any time</li>
-                    <li>Export your complete dataset in a portable format</li>
-                    <li>Permanently delete your account and the associated data</li>
-                    <li>Request a written copy of our security practices on demand</li>
-                </ul>
-
-                <h2>10. Changes to This Policy</h2>
-                <p>If we materially update how we handle data, we will revise this Privacy Policy and notify account holders in advance. The "Last Updated" date at the top of this page always reflects the current version.</p>
-
-                <h2>11. Contact Us</h2>
-                <p>If you have any questions about this Privacy Policy or how Venturi protects your data, please reach out:</p>
-                <p><strong>Email:</strong> support@venturimx.co</p>
-
-                <h2>12. Consent</h2>
-                <p>By using Venturi, you consent to the practices described in this Privacy Policy. We hold ourselves to a standard we would expect from any service trusted with our own aircraft records.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span>Venturi</span>
-                </div>
-                <div class="footer-links">
-                    <a href="support.html">Support</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Venturi Aviation. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
