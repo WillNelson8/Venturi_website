@@ -14,7 +14,7 @@
  * signed-in user's account carries straight through to Stripe Checkout.
  */
 
-const BILLING_ENABLED = false;  // <- set to true at launch (also flip the function secret)
+const BILLING_ENABLED = true;  // live (function secret BILLING_ENABLED=true set 2026-06-12)
 
 const SUPABASE_URL = 'https://crkeiitgmglbcbbyncme.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_Vh1Afm2RFFeK8vM0itPF-A_tyYaR81E';
