@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Venturi Premium - add your own aircraft, invite co-owners, and post in the community. Upgrade on the web, unlock instantly in the app.">
+<title>Premium - Venturi</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="forum.css">
+<style>
+  .page-head { padding: 56px 0 22px; }
+
+  /* PLAN TOGGLE */
+  .plan-toggle {
+    display: flex; gap: 5px; justify-content: center;
+    background: rgba(220,238,255,0.6); border: 1px solid rgba(190,220,255,0.5);
+    border-radius: 100px; padding: 5px; width: fit-content; margin: 0 auto 6px;
+  }
+  .plan-toggle button {
+    border: none; background: transparent; cursor: pointer; font-family: inherit;
+    padding: 9px 22px; border-radius: 100px; font-size: 13px; font-weight: 700;
+    color: var(--text-3); transition: all 0.2s; position: relative;
+  }
+  .plan-toggle button.active {
+    background: var(--blue); color: #fff;
+    box-shadow: 0 0 18px var(--glow), inset 0 1px 0 rgba(255,255,255,0.22);
+  }
+  .plan-toggle .tog-save {
+    font-size: 10px; font-weight: 800; margin-left: 7px; padding: 1px 7px;
+    border-radius: 100px; background: rgba(22,163,74,0.12); color: #16A34A;
+    border: 1px solid rgba(22,163,74,0.28); letter-spacing: 0.02em;
+  }
+  .plan-toggle button.active .tog-save { background: rgba(255,255,255,0.22); color: #fff; border-color: transparent; }
+  .toggle-cap { text-align: center; font-size: 12px; color: var(--text-3); margin-bottom: 34px; min-height: 16px; }
+
+  /* PRICING GRID */
+  .pricing-grid {
+    display: grid; grid-template-columns: 1fr 1.15fr; gap: 22px;
+    max-width: 880px; margin: 0 auto 18px; align-items: stretch;
+  }
+  .plan-card { padding: 34px 32px; display: flex; flex-direction: column; position: relative; }
+  .plan-card.free { background: rgba(255,255,255,0.52); }
+  .plan-card.premium { overflow: hidden; border: 1.5px solid rgba(66,96,255,0.45); }
+  .plan-card.premium::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none; border-radius: 20px;
+    box-shadow: 0 0 0 1px rgba(66,96,255,0.18), 0 22px 60px rgba(66,96,255,0.16);
+  }
+  .plan-card.premium::after {
+    content: ''; position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
+    width: 460px; height: 260px; pointer-events: none;
+    background: radial-gradient(ellipse, rgba(66,96,255,0.16) 0%, transparent 65%);
+  }
+  .pop-badge {
+    position: absolute; top: 18px; right: 18px; z-index: 2;
+    font-size: 10px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    color: #fff; background: linear-gradient(135deg,#4260FF 0%,#0EA5E9 100%);
+    padding: 5px 12px; border-radius: 100px; box-shadow: 0 0 16px var(--glow);
+  }
+  .plan-name { font-size: 14px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--blue); position: relative; z-index: 1; }
+  .plan-card.free .plan-name { color: var(--text-3); }
+  .plan-price { display: flex; align-items: baseline; gap: 4px; margin: 14px 0 4px; position: relative; z-index: 1; }
+  .plan-price .amt { font-size: 52px; font-weight: 900; letter-spacing: -2px; color: var(--text); line-height: 1; }
+  .plan-price .per { font-size: 16px; font-weight: 600; color: var(--text-3); }
+  .plan-sub { font-size: 13px; color: var(--text-3); position: relative; z-index: 1; min-height: 18px; }
+  .save-pill {
+    display: none; margin-left: 8px; font-size: 11px; font-weight: 700; vertical-align: middle;
+    color: #16A34A; background: rgba(22,163,74,0.10); border: 1px solid rgba(22,163,74,0.25);
+    padding: 2px 9px; border-radius: 100px;
+  }
+  .plan-tag { font-size: 14px; color: var(--text-2); line-height: 1.5; margin: 16px 0 18px; position: relative; z-index: 1; }
+  .plan-feats { list-style: none; display: flex; flex-direction: column; gap: 13px; margin: 4px 0 26px; position: relative; z-index: 1; flex: 1; }
+  .plan-feats li { display: flex; gap: 11px; align-items: flex-start; font-size: 14px; color: var(--text-2); line-height: 1.45; }
+  .plan-feats li strong { color: var(--text); font-weight: 600; }
+  .check {
+    width: 19px; height: 19px; border-radius: 50%; flex-shrink: 0; margin-top: 1px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .premium .check { background: linear-gradient(135deg,#4260FF 0%,#0EA5E9 100%); }
+  .free .check { background: rgba(120,140,175,0.18); }
+  .free .check svg { stroke: var(--text-3); }
+  .plan-card .btn-blue, .plan-card .btn-ghost { width: 100%; justify-content: center; font-size: 15px; padding: 13px; position: relative; z-index: 1; }
+
+  /* PREMIUM-ACTIVE STATE (replaces the buy CTA when already subscribed) */
+  #premiumActive { display: none; position: relative; z-index: 1; text-align: center; }
+  #premiumActive .pa-check {
+    width: 46px; height: 46px; border-radius: 50%; margin: 4px auto 12px;
+    background: linear-gradient(135deg,#4260FF 0%,#0EA5E9 100%);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 22px var(--glow);
+  }
+  #premiumActive h3 { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+  #premiumActive p { font-size: 13px; color: var(--text-3); margin-bottom: 16px; line-height: 1.5; }
+
+  #comingSoon { display: none; position: relative; z-index: 1; margin-top: 14px; font-size: 13px; color: var(--text-3); line-height: 1.5; text-align: center; }
+  #billingMsg { text-align: center; }
+
+  /* TRUST ROW */
+  .trust-row {
+    display: flex; align-items: center; justify-content: center; gap: 9px;
+    max-width: 880px; margin: 14px auto 6px; font-size: 13px; color: var(--text-3); font-weight: 500;
+  }
+  .trust-row svg { stroke: var(--text-3); flex-shrink: 0; }
+
+  /* FAQ */
+  .faq { max-width: 720px; margin: 56px auto 90px; }
+  .faq h2 { text-align: center; font-size: 26px; font-weight: 800; letter-spacing: -0.8px; margin-bottom: 24px; }
+  .faq-item { padding: 0 24px; margin-bottom: 12px; overflow: hidden; }
+  .faq-q {
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer; font-family: inherit;
+    padding: 18px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    font-size: 15px; font-weight: 700; color: var(--text);
+  }
+  .faq-q .ico { flex-shrink: 0; transition: transform 0.25s; color: var(--blue); }
+  .faq-item.open .faq-q .ico { transform: rotate(45deg); }
+  .faq-a { max-height: 0; transition: max-height 0.28s ease, padding 0.28s ease; }
+  .faq-a p { font-size: 14px; color: var(--text-2); line-height: 1.65; padding-bottom: 0; }
+  .faq-item.open .faq-a { max-height: 240px; }
+  .faq-item.open .faq-a p { padding-bottom: 18px; }
+
+  @media (max-width: 760px) {
+    .pricing-grid { grid-template-columns: 1fr; max-width: 440px; }
+    .plan-card.premium { order: -1; }
+    .page-head h1 { font-size: 30px; }
+  }
+</style>
+</head>
+<body data-page="premium">
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Venturi</a>
+    <ul class="nav-links">
+      <li class="hide-m"><a href="index.html#features">Features</a></li>
+      <li><a href="premium.html">Premium</a></li>
+      <li><a href="forum.html">Community</a></li>
+      <li class="hide-m"><a href="support.html">Support</a></li>
+      <span id="navAuthSlot" style="display:contents"></span>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="page-head" style="text-align:center">
+      <div class="lbl" style="text-align:center">Venturi Premium</div>
+      <h1>Unlock the full flight deck.</h1>
+      <p style="margin:0 auto">Upgrade right here on the web. No app store, no middleman, no surprises. Your Premium account works instantly in the Venturi app.</p>
+    </div>
+
+    <!-- Billing period toggle -->
+    <div class="plan-toggle" role="tablist" aria-label="Billing period">
+      <button id="tabMonthly" class="active" type="button" role="tab" aria-selected="true">Monthly</button>
+      <button id="tabAnnual" type="button" role="tab" aria-selected="false">Annual<span class="tog-save">Save $80</span></button>
+    </div>
+    <div class="toggle-cap" id="toggleCap">Billed monthly. Cancel anytime.</div>
+
+    <!-- Pricing comparison -->
+    <div class="pricing-grid">
+
+      <!-- Free -->
+      <div class="plan-card free glass">
+        <div class="plan-name">Free</div>
+        <div class="plan-price"><span class="amt">$0</span><span class="per">forever</span></div>
+        <div class="plan-sub">For invited co-owners and crew.</div>
+        <p class="plan-tag">Join an aircraft someone invites you to and use everything on it.</p>
+        <ul class="plan-feats">
+          <li><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Join aircraft</strong> a co-owner invites you to.</span></li>
+          <li><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Full access to <strong>cost splits, maintenance, logbook, and analytics</strong> on aircraft you join.</span></li>
+          <li><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Read the <strong>community forum</strong>.</span></li>
+        </ul>
+        <a href="index.html#preview" class="btn-ghost">Get the app</a>
+      </div>
+
+      <!-- Premium -->
+      <div class="plan-card premium glass" id="premiumCard">
+        <span class="pop-badge">Most popular</span>
+        <div class="plan-name">Premium</div>
+        <div class="plan-price"><span class="amt" id="premiumPrice">$40</span><span class="per" id="premiumPer">/mo</span><span class="save-pill" id="savePill">Save $80</span></div>
+        <div class="plan-sub" id="premiumSub">Billed monthly. Cancel anytime.</div>
+        <p class="plan-tag">Run your own aircraft and bring your co-owners aboard.</p>
+        <ul class="plan-feats">
+          <li><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Everything in Free</strong>, included.</span></li>
+          <li><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Add your own aircraft</strong>, as many as you fly.</span></li>
+          <li><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Invite co-owners</strong> and split every cost automatically.</span></li>
+          <li><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Post and reply</strong> in the community forum.</span></li>
+          <li><span class="check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>AD compliance tracking, PDF exports, and <strong>priority support</strong>.</span></li>
+        </ul>
+
+        <button class="btn-blue" id="upgradeBtn">Upgrade to Premium</button>
+
+        <div id="premiumActive">
+          <div class="pa-check"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h3>You are Premium</h3>
+          <p id="renewalLine">Your subscription is active.</p>
+          <button class="btn-ghost" id="manageBtn">Manage billing</button>
+        </div>
+
+        <p class="form-msg" id="billingMsg"></p>
+        <p id="comingSoon">Premium is launching soon. Leave your email on the home page to be notified the moment it opens.</p>
+      </div>
+    </div>
+
+    <div class="trust-row">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <span>Secure checkout by Stripe. Cancel anytime.</span>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq">
+      <h2>Common questions</h2>
+
+      <div class="faq-item glass">
+        <button class="faq-q" type="button">How does Premium reach my app?<span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Your Venturi account is the same on the web and in the app. The moment your subscription is active, Premium unlocks inside the app automatically. There is nothing to re-enter.</p></div>
+      </div>
+
+      <div class="faq-item glass">
+        <button class="faq-q" type="button">What is the difference between Free and Premium?<span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Free lets you join an aircraft that another owner invites you to, with full access to every feature on it. Premium lets you add your own aircraft, invite co-owners, and post in the community forum.</p></div>
+      </div>
+
+      <div class="faq-item glass">
+        <button class="faq-q" type="button">Can I cancel anytime?<span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>Yes. Open the billing portal from this page and cancel in one click. You keep Premium until the end of the period you have already paid for, then your account returns to Free.</p></div>
+      </div>
+
+      <div class="faq-item glass">
+        <button class="faq-q" type="button">Does my co-owner need Premium too?<span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>No. Once you add an aircraft on Premium, the co-owners you invite can join and use everything on a free account. Only the owner adding the aircraft needs Premium.</p></div>
+      </div>
+
+      <div class="faq-item glass">
+        <button class="faq-q" type="button">What payment methods do you accept?<span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-a"><p>All major credit and debit cards, processed securely by Stripe. Venturi never sees or stores your card details.</p></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div class="foot-brand">Venturi</div>
+      <div class="foot-links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="billing.js"></script>
+</body>
+</html>

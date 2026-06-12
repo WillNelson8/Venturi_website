@@ -376,13 +376,22 @@ async function initThreadPage(session) {
 // Login / signup (login.html)
 // ---------------------------------------------------------------------------
 
+// Where to send the user after they authenticate. Pages link here with
+// ?next=<key>; unknown/absent keys fall back to the forum.
+function nextDest() {
+    const next = new URLSearchParams(window.location.search).get('next');
+    const map = { premium: 'premium.html', forum: 'forum.html' };
+    return map[next] || 'forum.html';
+}
+
 async function initLoginPage(session) {
     const c = await client();
     const msg = document.getElementById('authMsg');
+    const dest = nextDest();
 
-    // Already signed in: bounce to the forum
+    // Already signed in: bounce to wherever they were headed
     if (session && !window.location.hash.includes('type=recovery')) {
-        window.location.href = 'forum.html';
+        window.location.href = dest;
         return;
     }
 
@@ -436,7 +445,7 @@ async function initLoginPage(session) {
             console.error('signin error:', error);
             return;
         }
-        window.location.href = 'forum.html';
+        window.location.href = dest;
     });
 
     // Create account (same account as the iOS app)
@@ -473,7 +482,7 @@ async function initLoginPage(session) {
 
         if (data.session) {
             // Email confirmation disabled in project settings: signed in immediately
-            window.location.href = 'forum.html';
+            window.location.href = dest;
         } else {
             setMsg(msg, 'Account created. Check your email for a confirmation link, then sign in. This same login works in the Venturi app.', 'success');
         }
