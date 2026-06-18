@@ -24,8 +24,8 @@ const PORTAL_FN = SUPABASE_URL + '/functions/v1/create-portal-session';
 // Pricing copy (display only — the real charge comes from the Stripe Price ids
 // configured on the edge function). Keep these in sync with Stripe.
 const PLANS = {
-    monthly: { amount: '$40', per: '/mo', sub: 'Billed monthly. Cancel anytime.', cap: 'Billed monthly. Cancel anytime.', save: false },
-    annual:  { amount: '$400', per: '/yr', sub: 'Billed annually. Cancel anytime.', cap: "That's about $33/mo, billed once a year. Save $80.", save: true },
+    monthly: { amount: '$24.99', per: '/mo', sub: 'Billed monthly. Cancel anytime.', cap: 'Billed monthly. Cancel anytime.', save: false },
+    annual:  { amount: '$200', per: '/yr', sub: 'Billed annually. Cancel anytime.', cap: "That's about $16.67/mo, billed once a year. Save ~$100.", save: true },
 };
 
 let selectedPlan = 'monthly';
