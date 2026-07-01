@@ -117,6 +117,26 @@ nav {
   0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(66,96,255,0.55); }
   50%       { opacity: 0.75; box-shadow: 0 0 0 5px rgba(66,96,255,0); }
 }
+.app-store-line {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; color: var(--text-2);
+  letter-spacing: 0.01em;
+  margin-bottom: 28px; position: relative; z-index: 1;
+  background: linear-gradient(110deg,
+    var(--text-2) 40%, #B9CBFF 48%, #FFFFFF 50%, #B9CBFF 52%, var(--text-2) 60%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  animation: shimmer 4.5s ease-in-out infinite;
+}
+.apple-mark { font-size: 15px; line-height: 1; -webkit-text-fill-color: var(--text-2); }
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  55%  { background-position: -50% 0; }
+  100% { background-position: -50% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-store-line { animation: none; }
+}
 .hero h1 {
   font-size: 70px; font-weight: 900; letter-spacing: -3.5px; line-height: 1.0;
   color: var(--text); margin-bottom: 22px; position: relative; z-index: 1;
@@ -369,7 +389,7 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
       <li><a href="forum.html">Community</a></li>
       <li><a href="support.html">Support</a></li>
       <li><a href="login.html" id="navAuthLink">Log In</a></li>
-      <li><a href="#signup" class="nav-cta">Get Early Access</a></li>
+      <li><a href="https://apps.apple.com/us/app/venturi-mx/id6775712250" class="nav-cta" target="_blank" rel="noopener">Try App Now</a></li>
     </ul>
   </div>
 </nav>
@@ -377,14 +397,14 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="eyebrow"><span class="eyebrow-dot"></span>Beta launching soon</div>
+    <div class="app-store-line"><span class="apple-mark">&#63743;</span>Available on the App Store</div>
     <h1>Aircraft Ownership,<br><em>Organized.</em></h1>
     <p class="hero-sub">Split costs between co-owners, track every maintenance item, and forecast expenses with precision. Built for private pilots who run their aircraft like a business.</p>
     <form class="hero-form" id="heroSignupForm">
       <input type="email" id="heroEmail" placeholder="your@email.com" autocomplete="email" aria-label="Email address" required>
-      <button type="submit" class="btn-blue">Get Early Access</button>
+      <button type="submit" class="btn-blue">Join the Community</button>
     </form>
-    <p class="hero-note">Available for iPad &middot; iOS 17.0+ &middot; Launching soon</p>
+    <p class="hero-note">Available for iPad &middot; iOS 17.0+ &middot; Available now</p>
     <div class="hero-screens">
       <div class="ipad-frame side-l">
         <img src="assets/screen-preflight.webp" width="1640" height="2360" alt="Venturi pre-flight checklist">
@@ -593,17 +613,17 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
 <div class="signup-wrap">
   <div class="container">
     <div class="signup-box" id="signup">
-      <div class="eyebrow" style="position:relative;z-index:1;"><span class="eyebrow-dot"></span>Beta Access</div>
-      <h2>Be the first to fly <em>Venturi.</em></h2>
-      <p>Drop your email and we will send you early access before Venturi opens to the public. No spam, just one email when it is ready.</p>
+      <div class="eyebrow" style="position:relative;z-index:1;"><span class="eyebrow-dot"></span>Join Our Community</div>
+      <h2>Join the <em>Venturi</em> community.</h2>
+      <p>Drop your email to join the Venturi community and hear about new features and promotions. No spam, just the occasional email worth opening.</p>
       <form class="signup-form" id="signupForm">
         <input type="email" id="signupEmail" placeholder="your@email.com" autocomplete="email" aria-label="Email address" required>
-        <button type="submit" id="signupSubmit" class="btn-blue">Get Early Access</button>
+        <button type="submit" id="signupSubmit" class="btn-blue">Join the Community</button>
       </form>
       <p id="signupMessage"></p>
       <div class="perks">
-        <div class="perk"><span class="perk-dot"></span>First access when beta opens</div>
-        <div class="perk"><span class="perk-dot"></span>Shape the product before launch</div>
+        <div class="perk"><span class="perk-dot"></span>New feature announcements</div>
+        <div class="perk"><span class="perk-dot"></span>Exclusive promotions and offers</div>
         <div class="perk"><span class="perk-dot"></span>No spam, ever</div>
       </div>
     </div>
