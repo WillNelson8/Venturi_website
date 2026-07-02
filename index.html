@@ -19,7 +19,7 @@
 <meta name="twitter:description" content="Split costs between co-owners, track every maintenance item, and forecast expenses with precision. Built for private pilots.">
 <meta name="twitter:image" content="https://www.venturimx.co/assets/screen-analytics.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -36,10 +36,10 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
   background: linear-gradient(180deg,
-    #D8EDFF 0%, #E4F3FF 10%, #EDF8FF 28%,
-    #F3FAFF 55%, #F9FCFF 80%, #FDFEFF 100%);
+    #7FB4E4 0%, #93C0EA 12%, #A8CEEF 30%,
+    #B7D6F2 55%, #C4DDF5 80%, #CDE3F7 100%);
   color: var(--text);
   overflow-x: hidden;
   min-height: 100vh;
@@ -72,26 +72,26 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   height: 64px;
 }
-.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+.logo { font-size: 20px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
 .nav-links a { text-decoration: none; color: var(--text-2); font-size: 14px; font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover { color: var(--text); }
 .nav-cta {
-  background: var(--blue) !important; color: white !important;
+  background: linear-gradient(135deg, #4260FF 0%, #1E90FF 100%) !important; color: white !important;
   padding: 8px 22px; border-radius: 100px;
   font-weight: 700 !important; font-size: 14px !important;
-  box-shadow: 0 0 22px var(--glow), inset 0 1px 0 rgba(255,255,255,0.22);
+  box-shadow: 0 0 24px var(--glow), inset 0 1px 0 rgba(255,255,255,0.25);
   transition: all 0.2s !important;
 }
 .nav-cta:hover {
-  box-shadow: 0 0 36px rgba(66,96,255,0.45), inset 0 1px 0 rgba(255,255,255,0.28) !important;
+  box-shadow: 0 0 42px rgba(66,96,255,0.5), inset 0 1px 0 rgba(255,255,255,0.3) !important;
   transform: translateY(-1px); color: white !important;
 }
 
 /* HERO */
 .hero {
-  padding: 96px 0 0; text-align: center; position: relative;
-  background: linear-gradient(180deg, #B8DFF5 0%, #CCE9FA 12%, #D8F0FF 28%, transparent 65%);
+  padding: 60px 0 0; text-align: center; position: relative;
+  background: linear-gradient(180deg, #5E9FD8 0%, #7BB2E3 14%, #98C6EC 30%, transparent 66%);
 }
 .hero::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 55%;
@@ -121,7 +121,7 @@ nav {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 13px; font-weight: 600; color: var(--text-2);
   letter-spacing: 0.01em;
-  margin-bottom: 28px; position: relative; z-index: 1;
+  margin-bottom: 18px; position: relative; z-index: 1;
   background: linear-gradient(110deg,
     var(--text-2) 40%, #B9CBFF 48%, #FFFFFF 50%, #B9CBFF 52%, var(--text-2) 60%);
   background-size: 250% 100%;
@@ -138,8 +138,9 @@ nav {
   .app-store-line { animation: none; }
 }
 .hero h1 {
-  font-size: 70px; font-weight: 900; letter-spacing: -3.5px; line-height: 1.0;
-  color: var(--text); margin-bottom: 22px; position: relative; z-index: 1;
+  font-family: 'Onest', -apple-system, sans-serif;
+  font-size: 70px; font-weight: 600; letter-spacing: -2.2px; line-height: 1.0;
+  color: var(--text); margin-bottom: 16px; position: relative; z-index: 1;
 }
 .hero h1 em {
   font-style: normal;
@@ -148,7 +149,7 @@ nav {
 }
 .hero-sub {
   font-size: 19px; color: var(--text-2); line-height: 1.65;
-  max-width: 540px; margin: 0 auto 40px; position: relative; z-index: 1;
+  max-width: 540px; margin: 0 auto 28px; position: relative; z-index: 1;
 }
 .hero-form {
   display: inline-flex; align-items: center;
@@ -178,10 +179,6 @@ nav {
 }
 .hero-note { font-size: 13px; color: var(--text-3); margin-top: 13px; position: relative; z-index: 1; }
 
-.hero-screens {
-  margin-top: 70px; display: flex; justify-content: center;
-  align-items: flex-start; gap: 20px; position: relative; z-index: 1;
-}
 .ipad-frame {
   background: rgba(255,255,255,0.80);
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -190,11 +187,99 @@ nav {
   box-shadow: 0 28px 72px rgba(66,96,255,0.14), 0 6px 20px rgba(0,0,0,0.07);
 }
 .ipad-frame img { display: block; border-radius: 14px; width: 318px; height: auto; }
-.ipad-frame.side-l { transform: rotate(-4.5deg) translateY(26px); opacity: 0.82; }
-.ipad-frame.side-r { transform: rotate(4.5deg) translateY(36px); opacity: 0.74; }
+
+/* HERO STAGE: floating devices + drifting fact chips.
+   --p is scroll progress (0..1) set by JS; devices drift apart and chips
+   fade as the hero disconnects from the stats bar below. */
+.hero-stage {
+  --p: 0;
+  margin-top: 36px; position: relative; z-index: 1;
+  height: 620px; pointer-events: none;
+}
+.dev { position: absolute; will-change: transform; }
+.dev-ipad {
+  left: 50%; top: 0; z-index: 2;
+  transform: translateX(-58%)
+    translate(calc(var(--p) * -90px), calc(var(--p) * -70px))
+    rotate(calc(var(--p) * -3.5deg))
+    scale(calc(1 - var(--p) * 0.05));
+  opacity: calc(1 - max(var(--p) - 0.25, 0) * 1.05);
+}
+.dev-iphone {
+  left: 50%; top: 150px; z-index: 3;
+  transform: translateX(26%)
+    translate(calc(var(--p) * 110px), calc(var(--p) * -46px))
+    rotate(calc(var(--p) * 5deg))
+    scale(calc(1 - var(--p) * 0.05));
+  opacity: calc(1 - max(var(--p) - 0.25, 0) * 1.05);
+}
+.dev-float { animation: dev-bob 7.5s ease-in-out infinite; }
+.dev-iphone .dev-float { animation: dev-bob-b 6.2s ease-in-out -2.4s infinite; }
+@keyframes dev-bob   { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-13px); } }
+@keyframes dev-bob-b { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+.dev-img {
+  display: block; height: auto;
+  filter: drop-shadow(0 2px 10px rgba(23,37,84,0.38))
+          drop-shadow(0 42px 60px rgba(23,37,84,0.28))
+          drop-shadow(0 10px 22px rgba(23,37,84,0.14));
+}
+.dev-ipad .dev-img {
+  width: 450px;
+  transform: rotate(-2.5deg);
+}
+.dev-iphone .dev-img {
+  width: 220px;
+  transform: perspective(900px) rotateY(16deg) rotateX(2deg) rotate(5deg);
+}
+.stage-shadow {
+  position: absolute; left: 50%; bottom: -6px; z-index: 0;
+  width: 620px; height: 84px; transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(23,37,84,0.16), transparent 65%);
+  filter: blur(6px);
+  animation: shadow-breathe 7.5s ease-in-out infinite;
+  opacity: calc(1 - var(--p) * 1.4);
+}
+@keyframes shadow-breathe {
+  0%, 100% { transform: translateX(-50%) scaleX(1); opacity: 1; }
+  50%      { transform: translateX(-50%) scaleX(0.94); opacity: 0.78; }
+}
+.chip-layer {
+  position: absolute; inset: 0; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  opacity: calc(1 - var(--p) * 1.6);
+}
+.chip-layer.back  { z-index: 1; }
+.chip-layer.front { z-index: 1; }
+.fact-chip {
+  position: absolute; left: 100%;
+  display: inline-flex; align-items: center; gap: 9px;
+  background: rgba(255,255,255,0.78); border: 1px solid rgba(190,220,255,0.75);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  padding: 9px 17px; border-radius: 100px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px; font-weight: 500; color: var(--text-2);
+  box-shadow: 0 6px 22px rgba(66,96,255,0.10);
+  white-space: nowrap;
+  animation: chip-drift linear infinite;
+}
+.chip-layer.back .fact-chip { opacity: 0.8; font-size: 12.5px; }
+@keyframes chip-drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-1500px); }
+}
+.chip-dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+.chip-dot.g { background: #10B981; }
+.chip-dot.b { background: var(--blue); }
+.chip-dot.a { background: #F59E0B; }
+@media (prefers-reduced-motion: reduce) {
+  .dev-float, .stage-shadow { animation: none; }
+  .fact-chip { animation: none; }
+  .chip-layer { display: none; }
+}
 
 /* STATS */
-.stats { padding: 56px 0; }
+.stats { padding: 76px 0 56px; }
 .stats-glass {
   background: rgba(255,255,255,0.62);
   backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
@@ -204,18 +289,19 @@ nav {
   box-shadow: 0 4px 28px rgba(66,96,255,0.07);
 }
 .stat { text-align: center; }
-.stat-n { font-size: 46px; font-weight: 900; letter-spacing: -2px; color: var(--blue); }
+.stat-n { font-family: 'Geist Mono', monospace; font-size: 42px; font-weight: 600; letter-spacing: -1px; color: var(--blue); }
 .stat-n sup { font-size: 28px; opacity: 0.62; }
 .stat-l { font-size: 13px; color: var(--text-3); margin-top: 4px; font-weight: 500; }
 
 /* SECTIONS */
 section { padding: 100px 0; position: relative; z-index: 1; }
 .lbl {
-  font-size: 11px; font-weight: 700; letter-spacing: 0.11em;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--blue); margin-bottom: 14px;
 }
 .lbl.c { text-align: center; }
-h2 { font-size: 44px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; color: var(--text); margin-bottom: 18px; }
+h2 { font-size: 44px; font-weight: 700; letter-spacing: -1.3px; line-height: 1.1; color: var(--text); margin-bottom: 18px; }
 .sub { font-size: 18px; color: var(--text-2); line-height: 1.65; max-width: 520px; }
 .sub.c { text-align: center; margin: 0 auto 56px; }
 
@@ -233,9 +319,20 @@ h2 { font-size: 44px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1
 .bi strong { color: var(--text); font-weight: 600; }
 
 /* Screenshot panels */
-.vis { position: relative; }
+.vis { position: relative; text-align: center; }
 .vis .ipad-frame { width: 100%; }
 .vis .ipad-frame img { width: 100%; }
+
+/* Framed device in a feature section: real Apple bezel + gentle float */
+.dev-frame { position: relative; display: inline-block; margin: 0 auto; }
+.sect-float { animation: dev-bob 8s ease-in-out infinite; will-change: transform; }
+.sect-dev {
+  display: block; width: 360px; max-width: 74vw; height: auto;
+  filter: drop-shadow(0 2px 10px rgba(23,37,84,0.30))
+          drop-shadow(0 34px 56px rgba(23,37,84,0.20));
+}
+.two-up .sect-dev { width: 320px; }
+@media (prefers-reduced-motion: reduce) { .sect-float { animation: none; } }
 
 /* Floating info badges */
 .fbadge {
@@ -318,8 +415,8 @@ h2 { font-size: 44px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1
 #flightLine { z-index: 0; }
 #flightPlane { z-index: 0; }
 #flightPlane .plane-body {
-  fill: #A9C4FA;
-  filter: drop-shadow(0 3px 6px rgba(66,96,255,0.22));
+  fill: url(#planeGrad);
+  filter: drop-shadow(0 2px 5px rgba(10,20,60,0.5));
 }
 @media (max-width: 880px) {
   #flightLine, #flightPlane { display: none; }
@@ -337,8 +434,11 @@ h2 { font-size: 44px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1
   .hero { padding-top: 64px; }
   .hero h1 { font-size: 44px; letter-spacing: -1.8px; }
   .hero-sub { font-size: 17px; }
-  .hero-screens { margin-top: 48px; }
-  .ipad-frame.side-l, .ipad-frame.side-r { display: none; }
+  .hero-stage { margin-top: 32px; height: 500px; }
+  .dev-ipad .dev-img { width: 340px; }
+  .dev-iphone { top: 120px; }
+  .dev-iphone .dev-img { width: 168px; }
+  .stage-shadow { width: 480px; }
   .stats { padding: 40px 0; }
   .stats-glass { flex-wrap: wrap; gap: 28px 44px; padding: 32px 28px; }
   .stat-n { font-size: 36px; }
@@ -361,7 +461,14 @@ h2 { font-size: 44px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1
   .hero-form { display: flex; width: 100%; }
   .hero-form input { width: auto; flex: 1; min-width: 0; }
   .ipad-frame img { width: 100%; }
-  .hero-screens .ipad-frame { width: 100%; }
+  .hero-stage { height: 420px; }
+  .dev-ipad { transform: translateX(-54%); }
+  .dev-ipad .dev-img { width: 66vw; }
+  .dev-iphone { top: 90px; transform: translateX(14%); }
+  .dev-iphone .dev-img { width: 33vw; }
+  .chip-layer.back { display: none; }
+  .fact-chip { font-size: 12px; padding: 8px 14px; }
+  .stage-shadow { width: 78vw; }
   .feat-grid { grid-template-columns: 1fr; }
   .signup-form { padding-left: 16px; }
   .signup-form .btn-blue { padding: 11px 16px; }
@@ -389,7 +496,7 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
       <li><a href="forum.html">Community</a></li>
       <li><a href="support.html">Support</a></li>
       <li><a href="login.html" id="navAuthLink">Log In</a></li>
-      <li><a href="https://apps.apple.com/us/app/venturi-mx/id6775712250" class="nav-cta" target="_blank" rel="noopener">Try App Now</a></li>
+      <li><a href="https://apps.apple.com/us/app/venturi-mx/id6775712250" class="nav-cta" target="_blank" rel="noopener">Download Today</a></li>
     </ul>
   </div>
 </nav>
@@ -405,16 +512,27 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
       <button type="submit" class="btn-blue">Join the Community</button>
     </form>
     <p class="hero-note">Available for iPad &middot; iOS 17.0+ &middot; Available now</p>
-    <div class="hero-screens">
-      <div class="ipad-frame side-l">
-        <img src="assets/screen-preflight.webp" width="1640" height="2360" alt="Venturi pre-flight checklist">
+    <div class="hero-stage" id="heroStage">
+      <div class="chip-layer back" aria-hidden="true">
+        <span class="fact-chip" style="top:2%;  animation-duration:66s; animation-delay:-12s;"><span class="chip-dot a"></span>Annual inspection due Jun 3</span>
+        <span class="fact-chip" style="top:9%;  animation-duration:72s; animation-delay:-40s;"><span class="chip-dot b"></span>Oil change in 12.4 hrs</span>
+        <span class="fact-chip" style="top:16%; animation-duration:68s; animation-delay:-57s;"><span class="chip-dot g"></span>48.2 gal fuel logged</span>
       </div>
-      <div class="ipad-frame">
-        <img src="assets/screen-analytics.webp" width="1640" height="2360" alt="Venturi analytics overview">
+      <div class="dev dev-ipad">
+        <div class="dev-float">
+          <img class="dev-img" src="assets/device-ipad-analytics.png" width="880" height="1220" alt="Venturi analytics overview on iPad Air">
+        </div>
       </div>
-      <div class="ipad-frame side-r">
-        <img src="assets/screen-ownership.webp" width="1640" height="2360" alt="Venturi ownership costs">
+      <div class="dev dev-iphone">
+        <div class="dev-float">
+          <img class="dev-img" src="assets/device-iphone-home.png" width="460" height="950" alt="Venturi home dashboard on iPhone 17">
+        </div>
       </div>
+      <div class="chip-layer front" aria-hidden="true">
+        <span class="fact-chip" style="top:5%;  animation-duration:50s; animation-delay:-9s;"><span class="chip-dot g"></span>Ready to fly &middot; 30/30 checks</span>
+        <span class="fact-chip" style="top:12%; animation-duration:54s; animation-delay:-33s;"><span class="chip-dot b"></span>Pilot 2 owes $134.60</span>
+      </div>
+      <div class="stage-shadow" aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -446,11 +564,11 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
         </div>
       </div>
       <div class="vis">
-        <div class="ipad-frame">
-          <img src="assets/screen-invite.webp" width="1640" height="2360" loading="lazy" alt="Invite co-owner screen">
+        <div class="dev-frame sect-float">
+          <img class="sect-dev" src="assets/device-invite.png" width="760" height="1054" loading="lazy" alt="Invite co-owner screen on iPad">
+          <div class="fbadge tr"><span class="fdot" style="background:#22C55E;"></span>Invite sent<div class="fs">co-pilot@example.com</div></div>
+          <div class="fbadge bl"><span class="fdot" style="background:#4260FF;"></span>Co-owner connected<div class="fs">Add all your co-owners</div></div>
         </div>
-        <div class="fbadge tr"><span class="fdot" style="background:#22C55E;"></span>Invite sent<div class="fs">co-pilot@example.com</div></div>
-        <div class="fbadge bl"><span class="fdot" style="background:#4260FF;"></span>Co-owner connected<div class="fs">Add all your co-owners</div></div>
       </div>
     </div>
   </div>
@@ -471,11 +589,11 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
         </div>
       </div>
       <div class="vis">
-        <div class="ipad-frame">
-          <img src="assets/screen-ownership.webp" width="1640" height="2360" loading="lazy" alt="Ownership costs and reimbursements">
+        <div class="dev-frame sect-float" style="animation-delay:-2s;">
+          <img class="sect-dev" src="assets/device-ownership.png" width="760" height="1054" loading="lazy" alt="Ownership costs and reimbursements on iPad">
+          <div class="fbadge tr"><span class="fdot" style="background:#4260FF;"></span>$1,106.30 total<div class="fs">Split across 4 pilots</div></div>
+          <div class="fbadge bl"><span class="fdot" style="background:#F59E0B;"></span>3 transfers pending<div class="fs">Reimbursements auto-calculated</div></div>
         </div>
-        <div class="fbadge tr"><span class="fdot" style="background:#4260FF;"></span>$1,106.30 total<div class="fs">Split across 4 pilots</div></div>
-        <div class="fbadge bl"><span class="fdot" style="background:#F59E0B;"></span>3 transfers pending<div class="fs">Reimbursements auto-calculated</div></div>
       </div>
     </div>
   </div>
@@ -489,16 +607,16 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
     <p class="sub c">Venturi runs through all 30 pre-flight items before you touch the plane. Airworthiness status, upcoming maintenance, and local weather are all on one screen before you leave the house.</p>
     <div class="two-up">
       <div class="vis">
-        <div class="ipad-frame">
-          <img src="assets/screen-preflight.webp" width="1640" height="2360" loading="lazy" alt="Ready to fly screen">
+        <div class="dev-frame sect-float">
+          <img class="sect-dev" src="assets/device-preflight.png" width="760" height="1054" loading="lazy" alt="Ready to fly screen on iPad">
+          <div class="fbadge tr"><span class="fdot" style="background:#22C55E;"></span>Ready to fly<div class="fs">All 30 checks passed</div></div>
         </div>
-        <div class="fbadge tr"><span class="fdot" style="background:#22C55E;"></span>Ready to fly<div class="fs">All 30 checks passed</div></div>
       </div>
       <div class="vis">
-        <div class="ipad-frame">
-          <img src="assets/screen-preflight-detail.webp" width="1640" height="2360" loading="lazy" alt="Pre-flight detail and start flight">
+        <div class="dev-frame sect-float" style="animation-delay:-3.5s;">
+          <img class="sect-dev" src="assets/device-preflight-detail.png" width="760" height="1054" loading="lazy" alt="Pre-flight detail and start flight on iPad">
+          <div class="fbadge bl"><span class="fdot" style="background:#4260FF;"></span>Start Flight and Log<div class="fs">One tap to begin recording</div></div>
         </div>
-        <div class="fbadge bl"><span class="fdot" style="background:#4260FF;"></span>Start Flight and Log<div class="fs">One tap to begin recording</div></div>
       </div>
     </div>
   </div>
@@ -560,10 +678,10 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
         </div>
       </div>
       <div class="vis">
-        <div class="ipad-frame">
-          <img src="assets/screen-fuel.webp" width="1640" height="2360" loading="lazy" alt="Fuel analysis chart">
+        <div class="dev-frame sect-float" style="animation-delay:-1.2s;">
+          <img class="sect-dev" src="assets/device-fuel.png" width="760" height="1054" loading="lazy" alt="Fuel analysis chart on iPad">
+          <div class="fbadge tr"><span class="fdot" style="background:#0EA5E9;"></span>1.7 gal/hr average<div class="fs">140 gal total tracked</div></div>
         </div>
-        <div class="fbadge tr"><span class="fdot" style="background:#0EA5E9;"></span>1.7 gal/hr average<div class="fs">140 gal total tracked</div></div>
       </div>
     </div>
   </div>
@@ -585,10 +703,10 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
         </div>
       </div>
       <div class="vis">
-        <div class="ipad-frame">
-          <img src="assets/screen-maintenance.webp" width="1640" height="2360" loading="lazy" alt="Add maintenance item">
+        <div class="dev-frame sect-float" style="animation-delay:-4.5s;">
+          <img class="sect-dev" src="assets/device-maintenance.png" width="760" height="1054" loading="lazy" alt="Add maintenance item on iPad">
+          <div class="fbadge tr"><span class="fdot" style="background:#22C55E;"></span>4 items tracked<div class="fs">All maintenance in one place</div></div>
         </div>
-        <div class="fbadge tr"><span class="fdot" style="background:#22C55E;"></span>4 items tracked<div class="fs">All maintenance in one place</div></div>
       </div>
     </div>
   </div>
@@ -645,6 +763,47 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
 </footer>
 
 <script>
+  // Hero disconnect: as the user scrolls, the floating devices drift apart
+  // and the fact chips fade out, detaching the hero scene from the stats
+  // bar below. Writes a single --p custom property (0..1); all per-device
+  // motion is CSS calc() on that value. Skipped under 880px and for
+  // prefers-reduced-motion.
+  (function () {
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var stage = document.getElementById('heroStage');
+    if (!stage) return;
+    var denom = 1, rafId = null;
+
+    function build() {
+      var r = stage.getBoundingClientRect();
+      denom = (r.top + window.scrollY) * 0.6 + r.height * 0.75;
+    }
+    function apply() {
+      rafId = null;
+      if (window.innerWidth <= 880 || reduced.matches) {
+        stage.style.setProperty('--p', 0);
+        return;
+      }
+      // Dead zone: the scene stays fully assembled for the first 240px of
+      // scroll so the hero reads intact on load; the disconnect eases in after.
+      var p = Math.max(0, Math.min(1, (window.scrollY - 240) / denom));
+      stage.style.setProperty('--p', p.toFixed(4));
+    }
+    function onScroll() {
+      if (rafId === null) rafId = requestAnimationFrame(apply);
+    }
+
+    var resizeT;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeT);
+      resizeT = setTimeout(function () { build(); apply(); }, 150);
+    });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', function () { build(); apply(); });
+    build(); apply();
+  })();
+</script>
+<script>
   // Scroll-driven flight path: a dotted route weaving past each feature
   // section with a small plane that follows it. The line sits behind the
   // content (z-index 0); the plane flies above it. Dots already flown over
@@ -683,10 +842,13 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
       '<defs><mask id="fpMask">' +
       '<path id="fpMaskPath" fill="none" stroke="#fff" stroke-width="8"/>' +
       '</mask></defs>' +
-      '<path id="fpBase" fill="none" stroke="rgba(66,96,255,0.22)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0.5 11"/>' +
-      '<path id="fpDone" fill="none" stroke="rgba(66,96,255,0.55)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="0.5 11" mask="url(#fpMask)"/>';
+      '<path id="fpBase" fill="none" stroke="rgba(66,96,255,0.62)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="0.5 11"/>' +
+      '<path id="fpDone" fill="none" stroke="rgba(66,96,255,1)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="0.5 11" mask="url(#fpMask)"/>';
 
     planeSvg.innerHTML =
+      '<defs><linearGradient id="planeGrad" x1="0" y1="0" x2="1" y2="1">' +
+      '<stop offset="0" stop-color="#4260FF"/><stop offset="1" stop-color="#1E90FF"/>' +
+      '</linearGradient></defs>' +
       '<g id="fpPlaneG">' +
       '<path class="plane-body" d="M14 0 L10 -1.7 L4 -1.7 L0.5 -10 L-2.5 -10 L-1 -1.7 L-7 -1.3 L-9 -5.5 L-11 -5.5 L-10 -0.9 L-10 0.9 L-11 5.5 L-9 5.5 L-7 1.3 L-1 1.7 L-2.5 10 L0.5 10 L4 1.7 L10 1.7 Z"/>' +
       '</g>';
