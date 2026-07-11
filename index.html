@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18288850458"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18288850458');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Venturi - Aircraft cost management for co-owners and private pilots. Split costs, organize records, and forecast expenses with precision.">
@@ -38,8 +47,8 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
   background: linear-gradient(180deg,
-    #7FB4E4 0%, #93C0EA 12%, #A8CEEF 30%,
-    #B7D6F2 55%, #C4DDF5 80%, #CDE3F7 100%);
+    #D8EDFF 0%, #E4F3FF 10%, #EDF8FF 28%,
+    #F3FAFF 55%, #F9FCFF 80%, #FDFEFF 100%);
   color: var(--text);
   overflow-x: hidden;
   min-height: 100vh;
@@ -136,6 +145,19 @@ nav {
 }
 @media (prefers-reduced-motion: reduce) {
   .app-store-line { animation: none; }
+}
+.shimmer-eyebrow {
+  display: inline-flex; align-items: center;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+  margin-bottom: 28px; position: relative; z-index: 1;
+  background: linear-gradient(110deg,
+    var(--blue) 40%, #B9CBFF 48%, #FFFFFF 50%, #B9CBFF 52%, var(--blue) 60%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  animation: shimmer 4.5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .shimmer-eyebrow { animation: none; }
 }
 .hero h1 {
   font-family: 'Onest', -apple-system, sans-serif;
@@ -724,9 +746,9 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
   <div class="container">
     <div style="max-width:760px;margin:0 auto;text-align:center;background:rgba(255,255,255,0.62);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(190,220,255,0.5);border-radius:24px;padding:44px 38px;position:relative;overflow:hidden;">
       <div style="position:absolute;top:-110px;left:50%;transform:translateX(-50%);width:480px;height:260px;background:radial-gradient(ellipse,rgba(66,96,255,0.14) 0%,transparent 65%);pointer-events:none;"></div>
-      <div class="eyebrow" style="position:relative;z-index:1;justify-content:center;"><span class="eyebrow-dot"></span>Venturi Premium</div>
+      <div class="shimmer-eyebrow" style="justify-content:center;">Venturi Premium</div>
       <h2 style="position:relative;z-index:1;margin:10px 0 12px;">Fly free. Own with Premium.</h2>
-      <p style="position:relative;z-index:1;max-width:520px;margin:0 auto 26px;">Join an aircraft for free, or go Premium to add your own, invite co-owners, and post in the community. $40/mo or $400/yr.</p>
+      <p style="position:relative;z-index:1;max-width:520px;margin:0 auto 26px;">Join an aircraft for free, or go Premium to add your own, invite co-owners, and post in the community. $24.99/mo or $200/yr.</p>
       <div style="position:relative;z-index:1;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
         <a href="premium.html" class="btn-blue">See Premium</a>
       </div>
@@ -738,7 +760,7 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
 <div class="signup-wrap">
   <div class="container">
     <div class="signup-box" id="signup">
-      <div class="eyebrow" style="position:relative;z-index:1;"><span class="eyebrow-dot"></span>Join Our Community</div>
+      <div class="shimmer-eyebrow">Join Our Community</div>
       <h2>Join the <em>Venturi</em> community.</h2>
       <p>Drop your email to join the Venturi community and hear about new features and promotions. No spam, just the occasional email worth opening.</p>
       <form class="signup-form" id="signupForm">
