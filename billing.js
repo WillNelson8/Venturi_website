@@ -182,7 +182,8 @@ async function startCheckout(c) {
             a.appendChild(dot); a.appendChild(document.createTextNode(name));
             a.href = 'forum.html';
         } else {
-            a.className = 'nav-cta'; a.textContent = 'Log In'; a.href = 'login.html';
+            // Plain link, not nav-cta: the Download button is the nav's only CTA.
+            a.className = 'nav-login'; a.textContent = 'Log In'; a.href = 'login.html';
         }
         li.appendChild(a); slot.appendChild(li);
     }

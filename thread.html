@@ -19,18 +19,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="forum.css">
+<link rel="stylesheet" href="nav.css">
+<script src="nav.js" defer></script>
 </head>
 <body data-page="thread">
 
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="logo" aria-label="Venturi, back to home"><img src="assets/venturi-mark.svg" alt="Venturi" width="35" height="30"></a>
-    <ul class="nav-links">
-      <li class="hide-m"><a href="index.html#features">Features</a></li>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="index.html#coowners">Co-Owners</a></li>
+      <li><a href="index.html#features">Features</a></li>
       <li><a href="premium.html">Premium</a></li>
       <li><a href="forum.html">Community</a></li>
-      <li class="hide-m"><a href="support.html">Support</a></li>
+      <li><a href="support.html">Support</a></li>
       <span id="navAuthSlot" style="display:contents"></span>
+      <li><a class="nav-cta" href="https://apps.apple.com/us/app/venturi-mx/id6775712250">Download Today</a></li>
     </ul>
   </div>
 </nav>

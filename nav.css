@@ -1,0 +1,79 @@
+/* Shared navigation behaviour for every page.
+ *
+ * This file exists because the nav had drifted into four different versions
+ * across nine pages: tabs appeared and vanished depending on where you were,
+ * the CTA had two different names, and three different breakpoints hid
+ * different items. Keeping the behaviour in one place stops that recurring.
+ *
+ * Load this AFTER the page's own styles so these rules win.
+ */
+
+/* Log In sits beside the CTA but is a plain link, not a second button. */
+.nav-links .nav-login { font-weight: 600; }
+
+/* Current page indicator, so it is obvious where you are. */
+.nav-links a.is-active { color: var(--text); font-weight: 700; }
+.nav-links a.is-active:not(.nav-cta) { position: relative; }
+.nav-links a.is-active:not(.nav-cta)::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -7px;
+  height: 2px; border-radius: 2px; background: var(--blue);
+}
+
+/* Hamburger, desktop-hidden. */
+.nav-toggle {
+  display: none;
+  /* Column, not the flex default of row: the bars stack, and the collapse-to-X
+     transform below depends on that stacking. */
+  flex-direction: column;
+  align-items: center; justify-content: center;
+  width: 42px; height: 42px; margin-left: auto; padding: 0;
+  background: transparent; border: 0; border-radius: 10px; cursor: pointer;
+}
+.nav-toggle span {
+  display: block; width: 20px; height: 2px; border-radius: 2px;
+  background: var(--text);
+  transition: transform 0.22s ease, opacity 0.18s ease;
+}
+.nav-toggle span + span { margin-top: 5px; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+/* One breakpoint for every page. Previously these were 880, 720, and none. */
+@media (max-width: 880px) {
+  .nav-toggle { display: inline-flex; }
+
+  nav .nav-links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    display: none; flex-direction: column; align-items: stretch;
+    gap: 0; padding: 6px 20px 18px; margin: 0;
+    background: rgba(232, 246, 255, 0.97);
+    backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+    border-bottom: 1px solid rgba(170, 210, 255, 0.32);
+    box-shadow: 0 18px 34px rgba(36, 64, 160, 0.12);
+    max-height: calc(100vh - 64px); overflow-y: auto;
+  }
+  nav .nav-links.is-open { display: flex; }
+
+  nav .nav-links li,
+  nav .nav-links #navAuthSlot > li { width: 100%; }
+
+  nav .nav-links a {
+    display: block; padding: 14px 2px; font-size: 16px;
+    border-bottom: 1px solid rgba(11, 18, 32, 0.07);
+  }
+  /* The underline indicator does not read well as a full-width row. */
+  nav .nav-links a.is-active::after { display: none; }
+  nav .nav-links a.is-active { color: var(--blue); }
+
+  nav .nav-links .nav-cta {
+    text-align: center; margin-top: 14px; padding: 13px 22px;
+    border-bottom: 0;
+  }
+  nav .nav-links .nav-login { border-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle span { transition: none; }
+}

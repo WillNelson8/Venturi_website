@@ -128,19 +128,23 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
 .foot-links a:hover { color: var(--text-2); }
 .foot-copy { margin-top: 20px; font-size: 12px; color: var(--text-3); text-align: center; }
 </style>
+<link rel="stylesheet" href="nav.css">
+<script src="nav.js" defer></script>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="logo" aria-label="Venturi, back to home"><img src="assets/venturi-mark.svg" alt="Venturi" width="35" height="30"></a>
-    <ul class="nav-links">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-menu">
       <li><a href="index.html#coowners">Co-Owners</a></li>
-      <li><a href="index.html#preflight">Pre-Flight</a></li>
       <li><a href="index.html#features">Features</a></li>
       <li><a href="premium.html">Premium</a></li>
+      <li><a href="forum.html">Community</a></li>
       <li><a href="support.html">Support</a></li>
-      <li><a href="https://apps.apple.com/us/app/venturi-mx/id6775712250" class="nav-cta" target="_blank" rel="noopener">Try App Now</a></li>
+      <li><a class="nav-login" href="login.html">Log In</a></li>
+      <li><a class="nav-cta" href="https://apps.apple.com/us/app/venturi-mx/id6775712250">Download Today</a></li>
     </ul>
   </div>
 </nav>

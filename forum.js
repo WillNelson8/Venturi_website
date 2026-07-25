@@ -102,7 +102,8 @@ async function renderNavAuth(session) {
         slot.appendChild(li2);
     } else {
         const li = el('li');
-        const a = el('a', 'nav-cta', 'Log In');
+        // Plain link, not nav-cta: the Download button is the nav's only CTA.
+        const a = el('a', 'nav-login', 'Log In');
         a.href = 'login.html';
         li.appendChild(a);
         slot.appendChild(li);
