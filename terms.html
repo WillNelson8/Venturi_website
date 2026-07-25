@@ -14,6 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Service - Venturi</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -51,7 +52,10 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   height: 64px;
 }
-.logo { font-size: 20px; font-weight: 900; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+.logo { display: inline-flex; align-items: center; text-decoration: none; }
+.logo img { height: 30px; width: auto; display: block; transition: transform 0.2s ease, opacity 0.2s ease; }
+.logo:hover img { transform: scale(1.04); opacity: 0.82; }
+.logo:focus-visible { outline: 2px solid var(--blue); outline-offset: 6px; border-radius: 8px; }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
 .nav-links a { text-decoration: none; color: var(--text-2); font-size: 14px; font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover { color: var(--text); }
@@ -145,7 +149,7 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="logo">Venturi</a>
+    <a href="index.html" class="logo" aria-label="Venturi, back to home"><img src="assets/venturi-mark.svg" alt="Venturi" width="35" height="30"></a>
     <ul class="nav-links">
       <li><a href="index.html#coowners">Co-Owners</a></li>
       <li><a href="index.html#features">Features</a></li>

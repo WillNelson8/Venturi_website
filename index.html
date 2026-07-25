@@ -15,6 +15,7 @@
 <meta name="description" content="Venturi - Aircraft cost management for co-owners and private pilots. Split costs, organize records, and forecast expenses with precision.">
 <title>Venturi - Aircraft Ownership, Organized</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="canonical" href="https://www.venturimx.co/">
 <meta property="og:type" content="website">
@@ -81,7 +82,10 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   height: 64px;
 }
-.logo { font-size: 20px; font-weight: 800; color: var(--text); text-decoration: none; letter-spacing: -0.5px; }
+.logo { display: inline-flex; align-items: center; text-decoration: none; }
+.logo img { height: 30px; width: auto; display: block; transition: transform 0.2s ease, opacity 0.2s ease; }
+.logo:hover img { transform: scale(1.04); opacity: 0.82; }
+.logo:focus-visible { outline: 2px solid var(--blue); outline-offset: 6px; border-radius: 8px; }
 .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
 .nav-links a { text-decoration: none; color: var(--text-2); font-size: 14px; font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover { color: var(--text); }
@@ -510,7 +514,7 @@ footer { border-top: 1px solid rgba(190,220,255,0.35); padding: 40px 0; }
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="logo">Venturi</a>
+    <a href="index.html" class="logo" aria-label="Venturi, back to home"><img src="assets/venturi-mark.svg" alt="Venturi" width="35" height="30"></a>
     <ul class="nav-links">
       <li><a href="#coowners">Co-Owners</a></li>
       <li><a href="#features">Features</a></li>
