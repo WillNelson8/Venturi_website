@@ -14,6 +14,10 @@ Hosted on **Vercel** at `https://www.venturimx.co` (apex venturimx.co 307-redire
 
 ---
 
+**Tracking (2026-09):** every page's `<head>` carries two tags, in this order: the Google Ads gtag block (`AW-18288850458`) at the very top, and the Vercel Web Analytics script `<script defer src="/_vercel/insights/script.js"></script>` just above `</head>`. The Vercel path is served by the Vercel edge, so it only resolves on a deployment (it 404s on a local `file://` or plain static server). If you add a new page, copy both tags.
+
+---
+
 ## File structure
 
 ```
