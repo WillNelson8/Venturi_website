@@ -14,7 +14,7 @@ Hosted on **Vercel** at `https://www.venturimx.co` (apex venturimx.co 307-redire
 
 ---
 
-**Tracking (2026-09):** every page's `<head>` carries two tags, in this order: the Google Ads gtag block (`AW-18288850458`) at the very top, and the Vercel Web Analytics script `<script defer src="/_vercel/insights/script.js"></script>` just above `</head>`. The Vercel path is served by the Vercel edge, so it only resolves on a deployment (it 404s on a local `file://` or plain static server). If you add a new page, copy both tags.
+**Tracking and consent (2026-09):** the Google Ads gtag block is NO LONGER inline in the pages. `consent.js` (loaded first in every `<head>`) owns it and injects it only when allowed. Visitors outside the EU/EEA/UK get the tag immediately and never see a banner; visitors inside get a consent banner and no Google script is fetched until they accept. Region comes from the browser timezone (`Europe/*` plus Cyprus and the Atlantic island zones), so there is no geo-IP call. Google Consent Mode v2 signals are always set. Vercel Web Analytics (`<script defer src="/_vercel/insights/script.js">`, just above `</head>`) is cookieless and needs no consent; that path 404s locally because the Vercel edge injects it. Debug from the console with `venturiConsent.state()`, `.preview()`, `.reset()`. If you add a page, copy BOTH script tags. Do not re-add a raw gtag snippet.
 
 ---
 
