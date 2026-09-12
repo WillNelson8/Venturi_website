@@ -25,7 +25,7 @@ const PORTAL_FN = SUPABASE_URL + '/functions/v1/create-portal-session';
 // configured on the edge function). Keep these in sync with Stripe.
 const PLANS = {
     monthly: { amount: '$24.99', per: '/mo', sub: 'Billed monthly. Cancel anytime.', cap: 'Billed monthly. Cancel anytime.', save: false },
-    annual:  { amount: '$200', per: '/yr', sub: 'Billed annually. Cancel anytime.', cap: "That's about $16.67/mo, billed once a year. Save ~$100.", save: true },
+    annual:  { amount: '$250', per: '/yr', sub: 'Billed annually. Cancel anytime.', cap: "That's about $20.83/mo, billed once a year. Save ~$50.", save: true },
 };
 
 let selectedPlan = 'monthly';
